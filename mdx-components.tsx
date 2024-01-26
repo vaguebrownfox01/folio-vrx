@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react'
 
 // This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: any): any {
@@ -9,9 +9,7 @@ export function useMDXComponents(components: any): any {
 				{children}
 			</h1>
 		),
-		h2: ({ children }: PropsWithChildren) => (
-			<h2 className="text-zinc-50">{children}</h2>
-		),
+		h2: ({ children }: PropsWithChildren) => <h2 className="text-zinc-50">{children}</h2>,
 		...components,
-	};
+	}
 }
