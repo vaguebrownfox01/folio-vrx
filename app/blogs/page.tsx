@@ -21,8 +21,8 @@ export default async function ProjectsPage() {
   }, {} as Record<string, number>);
 
   const featured = allBlogs.find((project) => project.slug === "blog_template")!;
-  const top2 = allBlogs.find((project) => project.slug === "blog 1")!;
-  const top3 = allBlogs.find((project) => project.slug === "blog 2")!;
+  const top2 = allBlogs.find((project) => project.slug === "blog_1")!;
+  const top3 = allBlogs.find((project) => project.slug === "blog_2")!;
   const sorted = allBlogs
     .filter((p) => p.published)
     .filter(
