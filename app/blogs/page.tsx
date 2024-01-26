@@ -9,7 +9,7 @@ import { Eye } from 'lucide-react'
 
 const redis = Redis.fromEnv()
 
-const featuredPosts = ['blog_1', 'blog_2', 'blog_3']
+const featuredPosts = ['1_not_normal', 'blog_2', 'blog_3']
 
 export const revalidate = 60
 export default async function ProjectsPage() {
