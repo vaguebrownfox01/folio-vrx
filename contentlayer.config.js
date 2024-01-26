@@ -25,6 +25,10 @@ export const Project = defineDocumentType(() => ({
 		published: {
 			type: 'boolean',
 		},
+		featured: {
+			type: 'number',
+			default: -1,
+		},
 		title: {
 			type: 'string',
 			required: true,
@@ -41,6 +45,10 @@ export const Project = defineDocumentType(() => ({
 		},
 		repository: {
 			type: 'string',
+		},
+		tags: {
+			type: 'list',
+			of: { type: 'string' },
 		},
 	},
 	computedFields,
@@ -55,6 +63,10 @@ export const Art = defineDocumentType(() => ({
 		published: {
 			type: 'boolean',
 		},
+		featured: {
+			type: 'number',
+			default: -1,
+		},
 		title: {
 			type: 'string',
 			required: true,
@@ -71,6 +83,10 @@ export const Art = defineDocumentType(() => ({
 		},
 		repository: {
 			type: 'string',
+		},
+		tags: {
+			type: 'list',
+			of: { type: 'string' },
 		},
 	},
 	computedFields,
@@ -85,6 +101,10 @@ export const Blog = defineDocumentType(() => ({
 		published: {
 			type: 'boolean',
 		},
+		featured: {
+			type: 'number',
+			default: -1,
+		},
 		title: {
 			type: 'string',
 			required: true,
@@ -101,6 +121,10 @@ export const Blog = defineDocumentType(() => ({
 		},
 		repository: {
 			type: 'string',
+		},
+		tags: {
+			type: 'list',
+			of: { type: 'string' },
 		},
 	},
 	computedFields,

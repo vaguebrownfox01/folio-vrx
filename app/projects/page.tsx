@@ -25,18 +25,13 @@ export default async function PostsPage() {
 		{} as Record<string, number>,
 	);
 
-	const featuredPosts = ['pnoi_phone', 'asquire', 'formant'];
-
-	const featured = allPosts.find((post) => post.slug === featuredPosts[0])!;
-	const top2 = allPosts.find((post) => post.slug === featuredPosts[1])!;
-	const top3 = allPosts.find((post) => post.slug === featuredPosts[2])!;
+	const featuredPosts = allPosts
+		.filter((p) => p.featured && p.featured > 0)
+		.sort((a, b) => (a.featured ?? 0) - (b.featured ?? 0));
 
 	const sorted = allPosts
 		.filter((p) => p.published)
-		.filter(
-			(post) =>
-				post.slug !== featured.slug && post.slug !== top2.slug && post.slug !== top3.slug,
-		)
+		.filter((post) => post.featured < 0)
 		.sort(
 			(a, b) =>
 				new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
@@ -67,15 +62,19 @@ export default async function PostsPage() {
 
 				<div className="mx-auto grid grid-cols-1 gap-8 lg:grid-cols-2 ">
 					<Card>
-						<Link href={`/projects/${featured.slug}`}>
+						<Link href={`/projects/${featuredPosts[0].slug}`}>
 							<article className="relative h-full w-full p-4 md:p-8">
 								<div className="flex items-center justify-between gap-2">
 									<div className="text-xs text-zinc-100">
-										{featured.date ? (
-											<time dateTime={new Date(featured.date).toISOString()}>
+										{featuredPosts[0].date ? (
+											<time
+												dateTime={new Date(
+													featuredPosts[0].date,
+												).toISOString()}
+											>
 												{Intl.DateTimeFormat(undefined, {
 													dateStyle: 'medium',
-												}).format(new Date(featured.date))}
+												}).format(new Date(featuredPosts[0].date))}
 											</time>
 										) : (
 											<span>SOON</span>
@@ -84,7 +83,7 @@ export default async function PostsPage() {
 									<span className="flex items-center gap-1 text-xs text-zinc-500">
 										<Eye className="h-4 w-4" />{' '}
 										{Intl.NumberFormat('en-US', { notation: 'compact' }).format(
-											views[featured.slug] ?? 0,
+											views[featuredPosts[0].slug] ?? 0,
 										)}
 									</span>
 								</div>
@@ -93,10 +92,10 @@ export default async function PostsPage() {
 									id="featured-post"
 									className="mt-4 font-display text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl"
 								>
-									{featured.title}
+									{featuredPosts[0].title}
 								</h2>
 								<p className="mt-4 leading-8 text-zinc-400 duration-150 group-hover:text-zinc-300">
-									{featured.description}
+									{featuredPosts[0].description}
 								</p>
 								<div className="absolute bottom-4 md:bottom-8">
 									<p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
@@ -108,7 +107,7 @@ export default async function PostsPage() {
 					</Card>
 
 					<div className="mx-auto flex w-full flex-col gap-8 border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
-						{[top2, top3].map((post) => (
+						{featuredPosts.slice(1).map((post) => (
 							<Card key={post.slug}>
 								<Article post={post} views={views[post.slug] ?? 0} />
 							</Card>
