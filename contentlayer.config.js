@@ -77,7 +77,7 @@ export const Art = defineDocumentType(() => ({
 }));
 
 export const Blog = defineDocumentType(() => ({
-	name: "Blog",
+	name: "Blogs",
 	filePathPattern: "./blogs/**/*.mdx",
 	contentType: "mdx",
 

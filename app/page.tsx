@@ -32,7 +32,7 @@ export default function Home() {
         quantity={128}
       />
 
-      <h1 className="text-center pl-4 pr-4 pb-4 z-10 text-4xl text-transparent duration-1000 bg-gradient-to-tl from-white/25 via-teal-100 to-white/25 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+      <h1 className="text-center pl-4 pr-4 pb-4 z-10 text-4xl text-transparent duration-1000 bg-gradient-to-tl from-white/25 via-teal-100 to-white/25 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-6xl whitespace-nowrap bg-clip-text ">
         jeevan kylash
       </h1>
 
