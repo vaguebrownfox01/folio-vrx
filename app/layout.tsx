@@ -6,15 +6,15 @@ import { Analytics } from './components/analytics'
 
 export const metadata: Metadata = {
 	title: {
-		default: 'jeevankylash.com',
-		template: '%s | jeevankylash.com',
+		default: 'jeevankylash',
+		template: '%s | jeevankylash',
 	},
-	description: 'art | engineering | design',
+	description: 'design • engineering • art',
 	openGraph: {
-		title: 'jeevankylash.com',
-		description: 'art | engineering | design',
-		url: 'https://jeevankylash.com',
-		siteName: 'jeevankylash.com',
+		title: 'jeevankylash',
+		description: 'design • engineering • art',
+		url: 'https://foxareus.vercel.app',
+		siteName: 'jeevankylash.vercel.app',
 		images: [
 			{
 				url: '/og.png',
