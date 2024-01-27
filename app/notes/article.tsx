@@ -1,4 +1,4 @@
-import type { Project as Post } from '@/.contentlayer/generated';
+import type { Note as Post } from '@/.contentlayer/generated';
 import Link from 'next/link';
 import { Eye } from 'lucide-react';
 import page from './about';

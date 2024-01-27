@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { allProjects as allPosts } from 'contentlayer/generated';
+import { allNotes as allPosts } from 'contentlayer/generated';
 import { Navigation } from '../components/nav';
 import { Card } from '../components/card';
 import { Article } from './article';
@@ -13,7 +13,9 @@ const redis = Redis.fromEnv();
 export const revalidate = 60;
 export default async function PostsPage() {
 	const views = (
-		await redis.mget<number[]>(...allPosts.map((p) => ['pageviews', page.name, p.slug].join(':')))
+		await redis.mget<number[]>(
+			...allPosts.map((p) => ['pageviews', page.name, p.slug].join(':')),
+		)
 	).reduce(
 		(acc, v, i) => {
 			acc[allPosts[i].slug] = v ?? 0;

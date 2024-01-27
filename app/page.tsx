@@ -1,21 +1,20 @@
-import Link from 'next/link'
-import React from 'react'
-import Particles from './components/particles'
+import Link from 'next/link';
+import React from 'react';
+import Particles from './components/particles';
 
-const moniker = 'jeevan kylash'
-const tagline = 'vaguebrownfox'
+const moniker = 'jeevan kylash';
+const tagline = 'vaguebrownfox';
 
 const navigation = [
 	{ name: 'art', href: '/art' },
-	{ name: 'blogs', href: '/blogs' },
+	{ name: 'notes', href: '/notes' },
 	{ name: 'projects', href: '/projects' },
 	{ name: 'contact', href: '/contact' },
-]
+];
 
 export default function Home() {
 	return (
 		<div className="flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-teal-600/10 to-black">
-			
 			<nav className="my-16 animate-fade-in">
 				<ul className="flex items-center justify-center gap-4">
 					{navigation.map((item) => (
@@ -43,5 +42,5 @@ export default function Home() {
 
 			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={512} />
 		</div>
-	)
+	);
 }
