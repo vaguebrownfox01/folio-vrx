@@ -15,13 +15,17 @@ export default async function incr(req: NextRequest): Promise<NextResponse> {
 	}
 
 	const body = await req.json()
+
+	let page: string | undefined = undefined
 	let slug: string | undefined = undefined
-	if ('slug' in body) {
+	if ('page' in body && 'slug' in body) {
+		page = body.page
 		slug = body.slug
 	}
-	if (!slug) {
-		return new NextResponse('Slug not found', { status: 400 })
+	if (!(page && slug)) {
+		return new NextResponse('Page not found', { status: 400 })
 	}
+
 	const ip = req.ip
 	if (ip) {
 		// Hash the IP in order to not store it directly in your db.
@@ -39,6 +43,7 @@ export default async function incr(req: NextRequest): Promise<NextResponse> {
 			new NextResponse(null, { status: 202 })
 		}
 	}
-	await redis.incr(['pageviews', 'projects', slug].join(':'))
+	await redis.incr(['viewcount', page, slug].join(':'))
+
 	return new NextResponse(null, { status: 202 })
 }

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { Mdx } from '@/app/components/mdx';
 import { Header } from './header';
 import './mdx.css';
-import { ReportView } from './view';
+import { ReportView } from '../../components/view';
 import { Redis } from '@upstash/redis';
 import { allPosts, page } from '../about';
 
@@ -31,12 +31,12 @@ export default async function PostPage({ params }: Props) {
 		notFound();
 	}
 
-	const views = (await redis.get<number>(['pageviews', page.name, slug].join(':'))) ?? 0;
+	const views = (await redis.get<number>(['viewcount', page.name, slug].join(':'))) ?? 0;
 
 	return (
 		<div className="min-h-screen bg-zinc-50">
 			<Header post={post} views={views} />
-			<ReportView slug={post.slug} />
+			<ReportView page={page.name} slug={post.slug} />
 
 			<article className="prose prose-zinc prose-quoteless mx-auto px-4 py-12">
 				<Mdx code={post.body.code} />

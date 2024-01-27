@@ -5,14 +5,16 @@ import { Card } from '../components/card';
 import { Article } from './article';
 import { Redis } from '@upstash/redis';
 import { Eye } from 'lucide-react';
-import  { page,allPosts } from './about';
+import { page, allPosts, Post } from './about';
 
 const redis = Redis.fromEnv();
 
 export const revalidate = 60;
 export default async function PostsPage() {
 	const views = (
-		await redis.mget<number[]>(...allPosts.map((p) => ['pageviews', page.name, p.slug].join(':')))
+		await redis.mget<number[]>(
+			...allPosts.map((p: Post) => ['viewcount', page.name, p.slug].join(':')),
+		)
 	).reduce(
 		(acc, v, i) => {
 			acc[allPosts[i].slug] = v ?? 0;
@@ -22,22 +24,22 @@ export default async function PostsPage() {
 	);
 
 	const featuredPosts = allPosts
-		.filter((p) => p.featured && p.featured > 0)
-		.sort((a, b) => (a.featured ?? 0) - (b.featured ?? 0));
+		.filter((p: Post) => p.featured && p.featured > 0)
+		.sort((a: Post, b: Post) => (a.featured ?? 0) - (b.featured ?? 0));
 
 	const sorted = allPosts
-		.filter((p) => p.published)
-		.filter((post) => post.featured < 0)
+		.filter((p: Post) => p.published)
+		.filter((post: Post) => post.featured < 0)
 		.sort(
-			(a, b) =>
+			(a: Post, b: Post) =>
 				new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
 				new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
 		);
 
 	const postColumn = (n: number) => {
 		return sorted
-			.filter((_, i) => i % 3 === n)
-			.map((post) => (
+			.filter((_: any, i: number) => i % 3 === n)
+			.map((post: Post) => (
 				<Card key={post.slug}>
 					<Article post={post} views={views[post.slug] ?? 0} />
 				</Card>
@@ -103,7 +105,7 @@ export default async function PostsPage() {
 					</Card>
 
 					<div className="mx-auto flex w-full flex-col gap-8 border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
-						{featuredPosts.slice(1).map((post) => (
+						{featuredPosts.slice(1).map((post: Post) => (
 							<Card key={post.slug}>
 								<Article post={post} views={views[post.slug] ?? 0} />
 							</Card>
@@ -114,7 +116,7 @@ export default async function PostsPage() {
 
 				<div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:mx-0">
 					{[0, 1, 2].map((n) => (
-						<div className="grid grid-cols-1 gap-4">{postColumn(n)}</div>
+						<div key={`g${n}`} className="grid grid-cols-1 gap-4">{postColumn(n)}</div>
 					))}
 				</div>
 			</div>
