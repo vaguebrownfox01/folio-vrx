@@ -40,7 +40,7 @@ export default function Home() {
 				<h2 className="text-sm text-zinc-500 ">{tagline}</h2>
 			</div>
 
-			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={512} />
+			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={256} />
 		</div>
 	);
 }

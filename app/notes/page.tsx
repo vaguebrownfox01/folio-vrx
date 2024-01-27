@@ -116,7 +116,7 @@ export default async function PostsPage() {
 
 				<div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:mx-0">
 					{[0, 1, 2].map((n) => (
-						<div className="grid grid-cols-1 gap-4">{postColumn(n)}</div>
+						<div key={`g${n}`} className="grid grid-cols-1 gap-4">{postColumn(n)}</div>
 					))}
 				</div>
 			</div>

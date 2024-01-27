@@ -11,7 +11,7 @@ export const ReportView: React.FC<{ page: string, slug: string }> = ({ page, slu
 			},
 			body: JSON.stringify({ page, slug }),
 		})
-	}, [page, slug])
+	}, [slug])
 
 	return null
 }

@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation';
 import { Mdx } from '@/app/components/mdx';
 import { Header } from './header';
 import './mdx.css';
-import { ReportView } from './view';
 import { Redis } from '@upstash/redis';
 import { allPosts, page } from '../about';
+import { ReportView } from '@/app/components/view';
 
 export const revalidate = 60;
 type Props = {
