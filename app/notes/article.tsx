@@ -1,7 +1,6 @@
-import type { Note as Post } from '@/.contentlayer/generated';
 import Link from 'next/link';
 import { Eye } from 'lucide-react';
-import page from './about';
+import { Post, page } from './about';
 
 type Props = {
 	post: Post;

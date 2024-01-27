@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
-import { allProjects as allPosts } from 'contentlayer/generated';
 import { Navigation } from '../components/nav';
 import { Card } from '../components/card';
 import { Article } from './article';
 import { Redis } from '@upstash/redis';
 import { Eye } from 'lucide-react';
-import page from './about';
+import  { page,allPosts } from './about';
 
 const redis = Redis.fromEnv();
 

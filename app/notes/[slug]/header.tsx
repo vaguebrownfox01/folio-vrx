@@ -2,7 +2,7 @@
 import { ArrowLeft, Eye, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-import page from '../about';
+import {page} from '../about';
 
 type Props = {
 	post: {

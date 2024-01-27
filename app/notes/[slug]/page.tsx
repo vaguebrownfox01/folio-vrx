@@ -5,7 +5,7 @@ import { Header } from './header';
 import './mdx.css';
 import { ReportView } from './view';
 import { Redis } from '@upstash/redis';
-import page from '../about';
+import { page } from '../about';
 
 export const revalidate = 60;
 type Props = {

@@ -2,8 +2,7 @@
 import { ArrowLeft, Eye, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-
-const page = 'projects';
+import { page } from '../about';
 
 type Props = {
 	post: {
@@ -88,7 +87,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 					</div>
 
 					<Link
-						href={`/${page}`}
+						href={`/${page.name}`}
 						className={`duration-200 hover:font-medium ${
 							isIntersecting
 								? ' text-zinc-400 hover:text-zinc-100'
@@ -105,9 +104,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 						<h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-6xl">
 							{post.title}
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-zinc-300">
-							{post.description}
-						</p>
+						<p className="mt-6 text-lg leading-8 text-zinc-300">{post.description}</p>
 					</div>
 
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">

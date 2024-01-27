@@ -1,12 +1,10 @@
 import { notFound } from 'next/navigation';
-import { allProjects as allPosts } from 'contentlayer/generated';
 import { Mdx } from '@/app/components/mdx';
 import { Header } from './header';
 import './mdx.css';
 import { ReportView } from './view';
 import { Redis } from '@upstash/redis';
-
-const page = 'projects';
+import { page, allPosts } from '../about';
 
 export const revalidate = 60;
 type Props = {
@@ -33,7 +31,7 @@ export default async function PostPage({ params }: Props) {
 		notFound();
 	}
 
-	const views = (await redis.get<number>(['pageviews', page, slug].join(':'))) ?? 0;
+	const views = (await redis.get<number>(['pageviews', page.name, slug].join(':'))) ?? 0;
 
 	return (
 		<div className="min-h-screen bg-zinc-50">
