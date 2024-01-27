@@ -1,11 +1,10 @@
 import { notFound } from 'next/navigation';
-import { allNotes as allPosts } from 'contentlayer/generated';
 import { Mdx } from '@/app/components/mdx';
 import { Header } from './header';
 import './mdx.css';
 import { ReportView } from './view';
 import { Redis } from '@upstash/redis';
-import { page } from '../about';
+import { allPosts, page } from '../about';
 
 export const revalidate = 60;
 type Props = {
