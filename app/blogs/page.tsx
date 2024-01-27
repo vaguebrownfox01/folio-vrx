@@ -13,7 +13,7 @@ export const revalidate = 60;
 export default async function PostsPage() {
 	const views = (
 		await redis.mget<number[]>(
-			...allPosts.map((p: Post) => ['pageviews', page.name, p.slug].join(':')),
+			...allPosts.map((p: Post) => ['viewcount', page.name, p.slug].join(':')),
 		)
 	).reduce(
 		(acc, v, i) => {

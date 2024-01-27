@@ -43,7 +43,7 @@ export default async function incr(req: NextRequest): Promise<NextResponse> {
 			new NextResponse(null, { status: 202 })
 		}
 	}
-	await redis.incr(['pageviews', page, slug].join(':'))
+	await redis.incr(['viewcount', page, slug].join(':'))
 
 	console.log("double increments sent?", page, slug)
 	return new NextResponse(null, { status: 202 })
