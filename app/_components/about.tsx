@@ -1,4 +1,4 @@
-import type { Art, Note, Blogs, Project } from '@/.contentlayer/generated';
+import type { Art, Note, Blog, Project } from '@/.contentlayer/generated';
 import { allArts, allNotes, allBlogs, allProjects } from 'contentlayer/generated';
 
 export type page = {
@@ -9,14 +9,14 @@ export type page = {
 
 export type Props_article = {
 	page: page;
-	post: Art | Note | Blogs | Project;
+	post: Art | Note | Blog | Project;
 	views: number;
 };
 
 export type Props_postcol = {
 	page: page;
-	Post: Art | Note | Blogs | Project;
-	posts: Art[] | Note[] | Blogs[] | Project[];
+	Post: Art | Note | Blog | Project;
+	posts: Art[] | Note[] | Blog[] | Project[];
 	views: Record<string, number>;
 };
 
@@ -45,6 +45,6 @@ export const project_page: page = {
 		'designing pnoi-phone, a breath acoustic based biomedical device for monitoring asthma.',
 };
 
-export { Art, Note, Blogs, Project };
+export { Art, Note, Blog, Project };
 
 export { allArts, allNotes, allBlogs, allProjects };

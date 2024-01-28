@@ -4,7 +4,7 @@ import { Card } from '@/app/_components/card';
 import Mainpost from '@/app/_components/mainpost';
 import { Navigation } from '@/app/_components/nav';
 
-import { Blogs as Post, allBlogs as allPosts, blog_page as page } from '@/app/_components/about';
+import { Blog as Post, allBlogs as allPosts, blog_page as page } from '@/app/_components/about';
 
 import Article from '@/app/_components/article';
 
