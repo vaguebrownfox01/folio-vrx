@@ -1,26 +1,8 @@
 'use client';
+import { navs } from '@/app/_components/about';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-
-const pages = [
-	{
-		name: 'art',
-		href: '/art',
-	},
-	{
-		name: 'notes',
-		href: '/notes',
-	},
-	{
-		name: 'projects',
-		href: '/projects',
-	},
-	{
-		name: 'contact',
-		href: '/contact',
-	},
-];
 
 export const Navigation: React.FC = () => {
 	const ref = useRef<HTMLElement>(null);
@@ -47,7 +29,7 @@ export const Navigation: React.FC = () => {
 			>
 				<div className="container mx-auto flex flex-row-reverse items-center justify-between p-6">
 					<div className="flex justify-between gap-8">
-						{pages.map((page) => (
+						{navs.map((page) => (
 							<Link
 								key={page.name}
 								href={page.href}
