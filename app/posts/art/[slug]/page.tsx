@@ -1,10 +1,10 @@
-import { notFound } from 'next/navigation';
-import { Mdx } from '@/app/components/mdx';
-import { Header } from './header';
-import './mdx.css';
+import { allArts as allPosts, art_page as page } from '@/app/_components/about';
+import Header from '@/app/_components/header';
+import { Mdx } from '@/app/_components/mdx';
+import { ReportView } from '@/app/_components/view';
 import { Redis } from '@upstash/redis';
-import { allPosts, page } from '../about';
-import { ReportView } from '@/app/components/view';
+import { notFound } from 'next/navigation';
+import './mdx.css';
 
 export const revalidate = 60;
 type Props = {
@@ -35,8 +35,8 @@ export default async function PostPage({ params }: Props) {
 
 	return (
 		<div className="min-h-screen bg-zinc-50">
-			<Header post={post} views={views} />
-			<ReportView page={page.name} slug={post.slug} />
+			<Header page={page} post={post} views={views} />
+			<ReportView pagename={page.name} slug={post.slug} />
 
 			<article className="prose prose-zinc prose-quoteless mx-auto px-4 py-12">
 				<Mdx code={post.body.code} />

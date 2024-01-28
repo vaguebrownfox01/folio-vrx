@@ -1,20 +1,20 @@
-import '../global.css'
-import { Inter } from 'next/font/google'
-import LocalFont from 'next/font/local'
-import { Metadata } from 'next'
-import { Analytics } from './components/analytics'
+import '../global.css';
+import { Inter } from 'next/font/google';
+import LocalFont from 'next/font/local';
+import { Metadata } from 'next';
+import { Analytics } from './_components/analytics';
 
 export const metadata: Metadata = {
 	title: {
-		default: 'jeevankylash',
-		template: '%s | jeevankylash',
+		default: 'jeevan kylash',
+		template: '%s | jeevan kylash',
 	},
 	description: 'design • engineering • art',
 	openGraph: {
-		title: 'jeevankylash',
+		title: 'jeevan kylash',
 		description: 'design • engineering • art',
 		url: 'https://foxareus.vercel.app',
-		siteName: 'jeevankylash.vercel.app',
+		siteName: 'jeevankylash.net',
 		images: [
 			{
 				url: '/og.png',
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
 	icons: {
 		shortcut: '/favicon.png',
 	},
-}
+};
 const inter = Inter({
 	subsets: ['latin'],
 	variable: '--font-inter',
-})
+});
 
 const calSans = LocalFont({
 	src: '../public/fonts/CalSans-SemiBold.ttf',
 	variable: '--font-calsans',
-})
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
@@ -68,5 +68,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				{children}
 			</body>
 		</html>
-	)
+	);
 }

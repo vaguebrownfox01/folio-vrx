@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
-import Particles from './components/particles';
+import Particles from './_components/particles';
 
 const moniker = 'jeevan kylash';
 const tagline = 'Research Associate	•	SPIRE Lab	•	IISc Bangalore';
 
 const navigation = [
-	{ name: 'art', href: '/art' },
-	{ name: 'notes', href: '/notes' },
-	{ name: 'projects', href: '/projects' },
-	{ name: 'contact', href: '/contact' },
+	{ name: 'art', href: 'posts/art' },
+	{ name: 'notes', href: 'posts/notes' },
+	{ name: 'projects', href: 'posts/projects' },
+	{ name: 'contact', href: 'posts/contact' },
 ];
 
 export default function Home() {
