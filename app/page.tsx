@@ -1,23 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
-import Particles from './_components/particles';
-
-const moniker = 'jeevan kylash';
-const tagline = 'Research Associate	•	SPIRE Lab	•	IISc Bangalore';
-
-const navigation = [
-	{ name: 'art', href: 'posts/art' },
-	{ name: 'notes', href: 'posts/notes' },
-	{ name: 'projects', href: 'posts/projects' },
-	{ name: 'contact', href: 'posts/contact' },
-];
+import Particles from '@/app/_components/particles';
+import { moniker, navs, tagline } from '@/app/_components/about';
 
 export default function Home() {
 	return (
 		<div className="flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-teal-600/10 to-black">
 			<nav className="my-16 animate-fade-in">
 				<ul className="flex items-center justify-center gap-4">
-					{navigation.map((item) => (
+					{navs.map((item) => (
 						<Link
 							key={item.href}
 							href={item.href}
