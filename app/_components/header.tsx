@@ -2,9 +2,10 @@
 import { ArrowLeft, Eye, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-import {page} from '../about';
+import { page } from '@/app/_components/about';
 
 type Props = {
+	page: page;
 	post: {
 		url?: string;
 		title: string;
@@ -14,7 +15,7 @@ type Props = {
 
 	views: number;
 };
-export const Header: React.FC<Props> = ({ post, views }) => {
+export const Header: React.FC<Props> = ({ page, post, views }) => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
 
@@ -87,7 +88,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 					</div>
 
 					<Link
-						href={`/${page.name}`}
+						href={`/posts/${page.name}`}
 						className={`duration-200 hover:font-medium ${
 							isIntersecting
 								? ' text-zinc-400 hover:text-zinc-100'
@@ -104,9 +105,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 						<h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-6xl">
 							{post.title}
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-zinc-300">
-							{post.description}
-						</p>
+						<p className="mt-6 text-lg leading-8 text-zinc-300">{post.description}</p>
 					</div>
 
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
@@ -123,3 +122,5 @@ export const Header: React.FC<Props> = ({ post, views }) => {
 		</header>
 	);
 };
+
+export default Header;
