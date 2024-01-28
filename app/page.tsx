@@ -3,7 +3,7 @@ import React from 'react';
 import Particles from './components/particles';
 
 const moniker = 'jeevan kylash';
-const tagline = 'Research Associate | SPIRE Lab | IISc Bangalore';
+const tagline = 'Research Associate	•	SPIRE Lab	•	IISc Bangalore';
 
 const navigation = [
 	{ name: 'art', href: '/art' },
