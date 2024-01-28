@@ -19,7 +19,7 @@ export const navs = [
 	},
 	{
 		name: 'contact',
-		href: '/posts/contact',
+		href: '/contact',
 	},
 ];
 
