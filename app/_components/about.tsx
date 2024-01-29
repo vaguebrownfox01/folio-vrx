@@ -1,7 +1,19 @@
-import type { Art, Note, Blog, Project } from '@/.contentlayer/generated';
-import { allArts, allNotes, allBlogs, allProjects } from 'contentlayer/generated';
+import type {
+	Art,
+	Note,
+	Blog,
+	Project,
+} from '@/.contentlayer/generated';
+import {
+	allArts,
+	allNotes,
+	allBlogs,
+	allProjects,
+} from 'contentlayer/generated';
 
 export const moniker = 'jeevan kylash';
+export const x_handle = 'vaguebrownfox_x';
+export const git_handle = 'vaguebrownfox01';
 export const tagline = 'Research Associate	•	SPIRE Lab	•	IISc Bangalore';
 
 export const navs = [
@@ -53,7 +65,6 @@ export const project_page: page = {
 	description:
 		'designing pnoi-phone, a breath acoustic based biomedical device for monitoring asthma.',
 };
-
 
 export type Props_article = {
 	page: page;
