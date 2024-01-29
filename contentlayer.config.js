@@ -12,7 +12,11 @@ const computedFields = {
 	},
 	slug: {
 		type: 'string',
-		resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+		resolve: (doc) => {
+			// console.log("path", `/${doc._raw.flattenedPath}`)
+			// console.log("slug", doc._raw.flattenedPath.split('/').slice(-1).join('/'))
+			return doc._raw.flattenedPath.split('/').slice(-1).join('/')
+		},
 	},
 }
 
