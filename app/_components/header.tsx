@@ -22,13 +22,13 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 	const links: { label: string; href: string }[] = [];
 	if (post.repository) {
 		links.push({
-			label: 'GitHub',
+			label: 'github',
 			href: `https://github.com/${post.repository}`,
 		});
 	}
 	if (post.url) {
 		links.push({
-			label: 'Website',
+			label: 'link',
 			href: post.url,
 		});
 	}
