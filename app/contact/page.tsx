@@ -7,7 +7,7 @@ import { Card } from '../_components/card';
 const socials = [
 	{
 		icon: <Twitter size={20} />,
-		href: 'https://twitter.com/',
+		href: 'https://twitter.com/vaguebrownfox',
 		label: 'X',
 		handle: '@',
 	},
