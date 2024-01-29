@@ -2,7 +2,7 @@
 import { ArrowLeft, Eye, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
-import { page } from '@/app/_components/about';
+import { x_handle, git_handle, page } from '@/app/_components/about';
 
 type Props = {
 	page: page;
@@ -20,18 +20,21 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 	const [isIntersecting, setIntersecting] = useState(true);
 
 	const links: { label: string; href: string }[] = [];
+	
 	if (post.repository) {
 		links.push({
 			label: 'github',
-			href: `https://github.com/${post.repository}`,
+			href: `https://github.com/${git_handle}/${post.repository}`,
 		});
 	}
+
 	if (post.url) {
 		links.push({
 			label: 'link',
 			href: post.url,
 		});
 	}
+
 	useEffect(() => {
 		if (!ref.current) return;
 		const observer = new IntersectionObserver(([entry]) =>
@@ -65,9 +68,14 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 							} `}
 						>
 							<Eye className="h-5 w-5" />{' '}
-							{Intl.NumberFormat('en-US', { notation: 'compact' }).format(views)}
+							{Intl.NumberFormat('en-US', {
+								notation: 'compact',
+							}).format(views)}
 						</span>
-						<Link target="_blank" href="https://twitter.com/">
+						<Link
+							target="_blank"
+							href={`https://twitter.com/${x_handle}`}
+						>
 							<Twitter
 								className={`h-6 w-6 duration-200 hover:font-medium ${
 									isIntersecting
@@ -76,7 +84,10 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 								} `}
 							/>
 						</Link>
-						<Link target="_blank" href="https://github.com/">
+						<Link
+							target="_blank"
+							href={`https://github.com/${git_handle}`}
+						>
 							<Github
 								className={`h-6 w-6 duration-200 hover:font-medium ${
 									isIntersecting
@@ -105,14 +116,23 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 						<h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-6xl">
 							{post.title}
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-zinc-300">{post.description}</p>
+						<p className="mt-6 text-lg leading-8 text-zinc-300">
+							{post.description}
+						</p>
 					</div>
 
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
 						<div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
 							{links.map((link) => (
-								<Link target="_blank" key={link.label} href={link.href}>
-									{link.label} <span aria-hidden="true">&rarr;</span>
+								<Link
+									target="_blank"
+									key={link.label}
+									href={link.href}
+								>
+									{link.label}{' '}
+									<span aria-hidden="true">
+										&rarr;
+									</span>
 								</Link>
 							))}
 						</div>
