@@ -7,21 +7,21 @@ import { Card } from '../_components/card';
 const socials = [
 	{
 		icon: <Twitter size={20} />,
-		href: 'https://twitter.com/vaguebrownfox',
+		href: 'https://twitter.com/vaguebrownfox_x',
 		label: 'X',
 		handle: '@',
 	},
 	{
 		icon: <Mail size={20} />,
-		href: 'mailto:dev@.com',
-		label: 'Email',
-		handle: 'dev@.com',
+		href: 'mailto:jeevank@iisc.ac.in',
+		label: 'email',
+		handle: 'jeevank@iisc.ac.in',
 	},
 	{
 		icon: <Github size={20} />,
-		href: 'https://github.com/',
-		label: 'Github',
-		handle: '',
+		href: 'https://github.com/vaguebrownfox01',
+		label: 'github',
+		handle: 'vaguebrownfox01',
 	},
 ];
 
