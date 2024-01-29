@@ -12,6 +12,7 @@ import {
 } from 'contentlayer/generated';
 
 export const moniker = 'jeevan kylash';
+export const email = 'jeevank@iisc.ac.in';
 export const x_handle = 'vaguebrownfox_x';
 export const git_handle = 'vaguebrownfox01';
 export const tagline = 'Research Associate	•	SPIRE Lab	•	IISc Bangalore';
@@ -70,13 +71,6 @@ export type Props_article = {
 	page: page;
 	post: Art | Note | Blog | Project;
 	views: number;
-};
-
-export type Props_postcol = {
-	page: page;
-	Post: Art | Note | Blog | Project;
-	posts: Art[] | Note[] | Blog[] | Project[];
-	views: Record<string, number>;
 };
 
 export { Art, Note, Blog, Project };
