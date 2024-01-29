@@ -63,8 +63,7 @@ export const note_page: page = {
 export const project_page: page = {
 	name: 'projects',
 	title: 'Projects',
-	description:
-		'designing pnoi-phone, a breath acoustic based biomedical device for monitoring asthma.',
+	description: 'A few things I have worked on...',
 };
 
 export type Props_article = {
