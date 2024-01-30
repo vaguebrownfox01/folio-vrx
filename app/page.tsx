@@ -31,7 +31,7 @@ export default function Home() {
 				<h2 className="text-sm text-zinc-500">{tagline}</h2>
 			</div>
 
-			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={months()} />
+			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={months} />
 
 			<p className="text-teal-800 font-thin text-xs animate-fade-in absolute bottom-0 pb-2">{mori}</p>
 		</div>
