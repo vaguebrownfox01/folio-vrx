@@ -84,6 +84,6 @@ export const n_months = (dateString: string="1998-01-31") => {
     return roundedMonthsDifference;
 };
 
-export const months = n_months()
-
-export const mori = `a glimmering speck of dust for every month of my life thus far. ${n_months()}/${n_months() - n_months('2033-01-31')}`;
+export const months = n_months();
+export const ratio = `${n_months()} of ${n_months() - n_months('2033-01-31')}`;
+export const mori = `a glimmering speck of dust for every month of my life thus far`;

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Particles from '@/app/_components/particles';
-import { moniker, months, mori, navs, tagline } from '@/app/_components/about';
+import { moniker, months, mori, navs, ratio, tagline } from '@/app/_components/about';
 
 export default function Home() {
 	return (
@@ -12,7 +12,7 @@ export default function Home() {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="text-sm text-zinc-500 duration-500 hover:text-zinc-300"
+							className="text-sm text-zinc-500 duration-500 hover:text-teal-600 hover:scale-110"
 						>
 							{item.name}
 						</Link>
@@ -33,10 +33,10 @@ export default function Home() {
 
 			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={months} />
 
-			<div className='absolute bottom-0 pb-2' >
-
-			<p className="text-teal-800 text-center font-thin text-xs animate-fade-in">::momento mori::</p>
-			<p className="text-teal-800 text-center font-thin text-xs animate-fade-in">{mori}</p>
+			<div className='absolute -z-10 bottom-0 pb-2' >
+				<p className="text-teal-700 text-center font-thin text-xs delay-300 animate-fade-in">::momento mori::</p>
+				<p className="text-teal-700 text-center font-thin text-xs delay-1000 animate-fade-in">{mori}</p>
+				<p className="text-teal-700 text-center font-thin text-xs delay-75 animate-fade-in">{ratio}</p>
 			</div>
 		</div>
 	);
