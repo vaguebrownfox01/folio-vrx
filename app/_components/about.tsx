@@ -74,3 +74,14 @@ export type Props_article = {
 
 export { Art, Note, Blog, Project };
 export { allArts, allNotes, allBlogs, allProjects };
+
+export const months = (dateString: string="1998-01-31") => {
+    const givenDate = new Date(dateString);
+    const currentDate = new Date();
+    const timeDifference = currentDate.getTime() - givenDate.getTime();
+    const monthsDifference = timeDifference / (1000 * 60 * 60 * 24 * 30.4375);
+    const roundedMonthsDifference = Math.round(monthsDifference);
+    return roundedMonthsDifference;
+};
+
+export const mori = `::momento mori:: each glimmering speck of dust represents a month of my life thus far. ${months()}`;

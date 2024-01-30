@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Particles from '@/app/_components/particles';
-import { moniker, navs, tagline } from '@/app/_components/about';
+import { moniker, months, mori, navs, tagline } from '@/app/_components/about';
 
 export default function Home() {
 	return (
@@ -28,10 +28,12 @@ export default function Home() {
 
 			<div className="animate-glow hidden h-px w-screen animate-fade-right bg-gradient-to-r from-zinc-300/0 via-teal-300/50 to-zinc-300/0 md:block" />
 			<div className="my-16 animate-fade-in text-center">
-				<h2 className="text-sm text-zinc-500 ">{tagline}</h2>
+				<h2 className="text-sm text-zinc-500">{tagline}</h2>
 			</div>
 
-			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={256} />
+			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={months()} />
+
+			<p className="text-teal-800 font-thin text-xs animate-fade-in absolute bottom-0 pb-2">{mori}</p>
 		</div>
 	);
 }
