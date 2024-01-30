@@ -86,4 +86,4 @@ export const n_months = (dateString: string="1998-01-31") => {
 
 export const months = n_months()
 
-export const mori = `::momento mori:: each glimmering speck of dust represents a month of my life thus far. ${n_months()}/${n_months() - n_months('2033-04-19')}`;
+export const mori = `each glimmering speck of dust for a month of my life thus far. ${n_months()}/${n_months() - n_months('2033-01-31')}`;
