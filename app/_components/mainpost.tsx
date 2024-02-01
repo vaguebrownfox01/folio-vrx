@@ -37,7 +37,7 @@ const MainPost = ({ page, mainPost, views }: { page: page; mainPost: any; views:
 					</p>
 					<div className="absolute bottom-4 md:bottom-8">
 						<p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
-							read more <span aria-hidden="true">...</span>
+							read more<span aria-hidden="true">...</span>
 						</p>
 					</div>
 				</article>
