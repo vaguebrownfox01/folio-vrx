@@ -26,10 +26,10 @@ const bhue = {
 export const Tag: React.FC<Tags> = ({ tag, color }) => {
 	return (
 		<div
-			className={`mx-1 rounded-s border-l-4 ${bhue[color]} duration-700 md:gap-8`}
+			className={`mx-1 rounded-s border-l-4 ${bhue[color]} md:gap-8`}
 		>
 			<p
-				className={`text-lem text-in py-0 pl-2 pr-3 text-center text-sm text-${hue[color]} duration-1000`}
+				className={`text-lem text-in py-0 pl-2 pr-3 text-center text-sm text-${hue[color]}`}
 			>
 				{tag}
 			</p>
