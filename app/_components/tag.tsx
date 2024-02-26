@@ -29,7 +29,7 @@ export const Tag: React.FC<Tags> = ({ tag, color }) => {
 			className={`mx-1 rounded-s border-l-4 ${bhue[color]} md:gap-8`}
 		>
 			<p
-				className={`text-lem text-in py-0 pl-2 pr-3 text-center text-sm text-${txhue[color]}`}
+				className={`text-lem text-in py-0 pl-2 pr-3 text-center text-sm ${txhue[color]}`}
 			>
 				{tag}
 			</p>
