@@ -1,16 +1,16 @@
 type Tags = {
 	tag: string;
-	color: keyof typeof hue;
+	color: keyof typeof txhue;
 };
 
-const hue = {
-	violet: 'violet-400',
-	pink: 'pink-400',
-	blue: 'blue-400',
-	green: 'lime-400',
-	yellow: 'yellow-400',
-	orange: 'orange-400',
-	red: 'red-400',
+const txhue = {
+	violet: 'text-violet-400',
+	pink: 'text-pink-400',
+	blue: 'text-blue-400',
+	green: 'text-lime-400',
+	yellow: 'text-yellow-400',
+	orange: 'text-orange-400',
+	red: 'text-red-400',
 };
 
 const bhue = {
@@ -29,7 +29,7 @@ export const Tag: React.FC<Tags> = ({ tag, color }) => {
 			className={`mx-1 rounded-s border-l-4 ${bhue[color]} md:gap-8`}
 		>
 			<p
-				className={`text-lem text-in py-0 pl-2 pr-3 text-center text-sm text-${hue[color]}`}
+				className={`text-lem text-in py-0 pl-2 pr-3 text-center text-sm text-${txhue[color]}`}
 			>
 				{tag}
 			</p>
