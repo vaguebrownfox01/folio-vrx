@@ -1,38 +1,48 @@
-'use client'
-import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion'
+'use client';
+import {
+	motion,
+	useMotionTemplate,
+	useSpring
+} from 'framer-motion';
 
-import { MouseEventHandler, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react';
+import { Tag } from './tag';
 
 export const Card: React.FC<PropsWithChildren> = ({ children }) => {
-	const mouseX = useSpring(0, { stiffness: 500, damping: 100 })
-	const mouseY = useSpring(0, { stiffness: 500, damping: 100 })
+	const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
+	const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
 	function onMouseMove({ currentTarget, clientX, clientY }: any) {
-		const { left, top } = currentTarget.getBoundingClientRect()
-		mouseX.set(clientX - left)
-		mouseY.set(clientY - top)
+		const { left, top } = currentTarget.getBoundingClientRect();
+		mouseX.set(clientX - left);
+		mouseY.set(clientY - top);
 	}
-	const maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`
-	const style = { maskImage, WebkitMaskImage: maskImage }
+	const maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
+	const style = { maskImage, WebkitMaskImage: maskImage };
 
 	return (
 		<div
 			onMouseMove={onMouseMove}
-			className="overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-teal-400/50 border-zinc-600 "
+			className="group relative overflow-hidden rounded-xl border border-zinc-600 duration-700 hover:border-teal-400/50 hover:bg-zinc-800/10 md:gap-8 "
 		>
 			<div className="pointer-events-none">
 				<div className="absolute inset-0 z-0  transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
 				<motion.div
-					className="absolute inset-0 z-10  bg-gradient-to-br opacity-100  via-teal-200/10  transition duration-1000 group-hover:opacity-50 "
+					className="absolute inset-0 z-10  bg-gradient-to-br via-teal-200/10  opacity-100  transition duration-1000 group-hover:opacity-50 "
 					style={style}
 				/>
 				<motion.div
-					className="absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100"
+					className="text-pin absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100"
 					style={style}
 				/>
 			</div>
 
 			{children}
+			<div className="mb-4 ml-4 flex pl-2 pr-2">
+				<Tag tag="JS" color="yellow" />
+				<Tag tag="test" color="pink" />
+				<Tag tag="test" color="red" />
+			</div>
 		</div>
-	)
-}
+	);
+};
