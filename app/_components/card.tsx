@@ -38,7 +38,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 			</div>
 
 			{children}
-			<div className="mb-4 text-blue-400 ml-4 flex pl-2 pr-2">
+			<div className="mb-4 ml-4 flex pl-2 pr-2">
 				<Tag tag="JS" color="yellow" />
 				<Tag tag="React" color="violet" />
 				<Tag tag="ML" color="pink" />
