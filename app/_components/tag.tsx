@@ -95,6 +95,9 @@ const bhue = {
     'machine-learning': 'border-yellow-300',
 };
 
+// replace "text" in txhue with "border" in bhue
+
+
 export const Tag: React.FC<Tags> = ({ tag, color }) => {
     return (
         <div

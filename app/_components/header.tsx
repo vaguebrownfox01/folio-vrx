@@ -24,7 +24,7 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 	if (post.repository) {
 		links.push({
 			label: 'github',
-			href: `https://github.com/${git_handle}/${post.repository}`,
+			href: `${post.repository}`,
 		});
 	}
 
@@ -130,9 +130,9 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 									href={link.href}
 								>
 									{link.label}{' '}
-									<span aria-hidden="true">
+									{/* <span aria-hidden="true">
 										&rarr;
-									</span>
+									</span> */}
 								</Link>
 							))}
 						</div>
