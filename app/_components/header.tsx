@@ -3,6 +3,7 @@ import { ArrowLeft, Eye, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { x_handle, git_handle, page } from '@/app/_components/about';
+import { Tags } from './tag';
 
 type Props = {
 	page: page;
@@ -11,6 +12,7 @@ type Props = {
 		title: string;
 		description: string;
 		repository?: string;
+		tags?: string[] | undefined
 	};
 
 	views: number;
@@ -112,7 +114,7 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 			</div>
 			<div className="container relative isolate mx-auto overflow-hidden  py-24 sm:py-32">
 				<div className="mx-auto flex max-w-7xl flex-col items-center px-6 text-center lg:px-8">
-					<div className="mx-auto max-w-2xl lg:mx-0">
+					<div className="mx-auto mb-4 max-w-2xl lg:mx-0">
 						<h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-6xl">
 							{post.title}
 						</h1>
@@ -121,7 +123,10 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 						</p>
 					</div>
 
-					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+					<Tags tags={post.tags}/>
+
+
+					<div className="mx-auto mt-4 max-w-2xl lg:mx-0 lg:max-w-none">
 						<div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
 							{links.map((link) => (
 								<Link
@@ -137,6 +142,8 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 							))}
 						</div>
 					</div>
+
+
 				</div>
 			</div>
 		</header>

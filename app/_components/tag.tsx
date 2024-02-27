@@ -1,7 +1,10 @@
-type Tags = {
+type Tag = {
 	tag: string;
-	color: keyof typeof txhue;
 };
+
+type Tags = {
+	tags?: string[] | undefined
+}
 
 const txhue = {
 	violet: 'text-violet-400',
@@ -95,7 +98,7 @@ const bhue = {
     'machine-learning': 'border-yellow-300',
 };
 
-export const Tag: React.FC<Tags> = ({ tag, color }) => {
+const Tag: React.FC<Tag> = ({ tag }) => {
     return (
         <div
             className={`mb-2 mr-4 rounded-s border-l-2 ${bhue[tag as keyof typeof bhue] ? bhue[tag as keyof typeof bhue] : 'border-white'} md:gap-8`}
@@ -108,3 +111,18 @@ export const Tag: React.FC<Tags> = ({ tag, color }) => {
         </div>
     );
 };
+
+export const Tags: React.FC<Tags> = ({ tags }) => {
+    return (
+		<>
+        {tags && (
+			<div className="mb-4 ml-8 flex flex-wrap">
+				{tags.map((tag) => (
+					<Tag key={tag} tag={tag} />
+					))}
+			</div>
+		)}
+		</>
+    );
+};
+
