@@ -34,9 +34,9 @@ export default function Home() {
 			<Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={months} />
 
 			<div className='absolute -z-10 bottom-0 pb-2' >
-				<p className="text-teal-700 text-center text-xs delay-300 animate-fade-in">::momento mori::</p>
-				<p className="text-teal-700 text-center text-xs delay-1000 animate-fade-in">{mori}</p>
-				<p className="text-teal-700 text-center text-xs delay-75 animate-fade-in">{ratio}</p>
+				<p className="text-teal-500 text-center font-bold text-xs delay-300 animate-fade-in">::momento mori::</p>
+				<p className="text-teal-500 text-center font-bold text-xs delay-1000 animate-fade-in">{mori}</p>
+				<p className="text-teal-500 text-center font-bold text-xs delay-75 animate-fade-in">{ratio}</p>
 			</div>
 		</div>
 	);
