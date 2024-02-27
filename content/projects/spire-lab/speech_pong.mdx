@@ -3,7 +3,7 @@ title: "speeech pong!"
 description: SPIRE Lab demo for IISc Open Day 2023
 repository: https://github.com/vaguebrownfox01/spire-openday23
 url: 
-date: "2024-01-26"
+date: "2023-02-28"
 published: true
 featured: -1
 tags:
@@ -12,6 +12,34 @@ tags:
   - "raspberry-pi"
 ---
 
-- [ ] Add a description of the project here
-- [ ] Add a link to the repository
-- [ ] copy from github
+### Overview
+
+In SPIRE Lab, for IISc Open Day 2024, we developed an interactive game that challenges players to speak fast into a microphone to launch a ping pong ball out of a vertical tube! 
+The goal was to apply speech processing techniques and simple embedded system to create a fun and engaging experience.
+
+<video style={{"margin": "auto"}} width="320" height="240" src="/images/projects/spire/speech-pong.mp4" type="video/mp4" controls autoPlay />
+Video: demonstrating the launching of the ball!
+
+### System Design
+
+The setup consisted of the following components:
+  - **Microphone** - to record the player's speech
+  - **Raspberry Pi** - for signal analysis and motor control
+  - **Motor driver circuit** - to control the DC motor
+  - **DC motor** - coupled to a fan to blow air into the tube
+  - **Transparent tube** - houses the ping pong ball
+
+Image: Block diagram showing the different components and connections
+
+The player's speech is recorded by the microphone and analyzed in real-time using pitch-based signal processing code to determine the speaking rate. 
+As the measured speaking rate increases, the Rpi controls the motor driver using PWM signals to proportionally increase the speed of the DC motor.
+
+Image: spectogram of slow and fast speech and description
+
+In future, the game design and electronic hardware will be modularized to create a complete, easy to assemble product.
+Overall, this fast-talking game project was an engaging and attracted 100+ participants, children and grownups alike! 
+I enjoy using my technical abilities in a creative application at the intersection of software, hardware, and human interaction.
+
+Image: of the setup and people
+
+  

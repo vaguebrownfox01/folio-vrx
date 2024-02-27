@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Eye } from 'lucide-react';
 import { Props_article } from '@/app/_components/about';
-import { Tag } from './tag';
+import { Tags } from './tag';
 
 const Article: React.FC<Props_article> = ({ post, views, page }) => {
 	return (
@@ -37,14 +37,7 @@ const Article: React.FC<Props_article> = ({ post, views, page }) => {
 					{post.description}
 				</p>
 			</article>
-
-			{post.tags && (
-				<div className="mb-4 ml-8 flex flex-wrap">
-					{post.tags.map((tag) => (
-						<Tag key={tag} tag={tag} color="yellow" />
-					))}
-				</div>
-			)}
+			<Tags tags={post.tags}/>
 		</Link>
 	);
 };

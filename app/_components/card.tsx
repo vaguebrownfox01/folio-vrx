@@ -6,7 +6,6 @@ import {
 } from 'framer-motion';
 
 import { PropsWithChildren } from 'react';
-import { Tag } from './tag';
 
 export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 	const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
