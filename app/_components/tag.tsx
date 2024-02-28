@@ -31,6 +31,7 @@ const art_tags = {
 	illustration: 'text-yellow-400',
 	practice: 'text-gray-400',
 	design: 'text-purple-400',
+	paper: 'text-white',
 };
 
 const project_tags = {
@@ -110,6 +111,7 @@ const bhue = {
 	python: 'border-blue-400',
 	c: 'border-pink-500',
 	gratitude: 'border-white',
+	paper: 'border-white',
 	violet: 'border-violet-400',
 	pink: 'border-pink-400',
 	blue: 'border-blue-400',
@@ -124,7 +126,7 @@ const Tag: React.FC<Tag> = ({ tag }) => {
 	// console.log(bhue);
 	return (
 		<div
-			className={`mb-2 mr-4 rounded-s border-l-2 ${bhue[tag as keyof typeof bhue] ? bhue[tag as keyof typeof bhue] : 'border-white'}`}
+			className={`mb-2 mr-4 rounded-s border-l-2 ${txhue[tag as keyof typeof txhue] ? txhue[tag as keyof typeof txhue].replace("text", "border") : 'border-white'}`}
 		>
 			<p
 				className={`text-lem text-in pl-2 text-center text-sm ${txhue[tag as keyof typeof txhue] ? txhue[tag as keyof typeof txhue] : 'text-white'}`}
