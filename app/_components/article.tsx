@@ -37,7 +37,7 @@ const Article: React.FC<Props_article> = ({ post, views, page }) => {
 					{post.description}
 				</p>
 			</article>
-			<Tags tags={post.tags}/>
+			<Tags tags={post.tags?.reverse()}/>
 		</Link>
 	);
 };
