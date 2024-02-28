@@ -37,7 +37,10 @@ const Article: React.FC<Props_article> = ({ post, views, page }) => {
 					{post.description}
 				</p>
 			</article>
+			<div className='ml-8'>
+
 			<Tags tags={post.tags?.reverse()}/>
+			</div>
 		</Link>
 	);
 };
