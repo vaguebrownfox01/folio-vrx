@@ -45,7 +45,7 @@ export type page = {
 export const art_page: page = {
 	name: 'art',
 	title: 'Art',
-	description: 'My art stuff...',
+	description: 'A few art projects I have worked on...',
 };
 
 export const blog_page: page = {
@@ -57,7 +57,7 @@ export const blog_page: page = {
 export const note_page: page = {
 	name: 'notes',
 	title: 'Notes',
-	description: 'Snippets of a few things I have learned...',
+	description: 'collecting truths...',
 };
 
 export const project_page: page = {
