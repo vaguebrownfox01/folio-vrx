@@ -3,10 +3,38 @@ type Tag = {
 };
 
 type Tags = {
-	tags?: string[] | undefined
-}
+	tags?: string[] | undefined;
+};
+
+const art_tags = {
+	'env.vua': 'text-violet-400',
+	jxp: 'text-pink-300',
+
+	concepts: 'text-orange-300',
+	sketchbook: 'text-amber-800',
+	procreate: 'text-pink-500',
+
+	illustration: 'text-yellow-400',
+	practice: 'text-gray-400',
+	design: 'text-purple-400',
+};
+
+const art_tags_b = {
+	'env.vua': 'border-violet-400',
+	jxp: 'border-pink-300',
+
+	concepts: 'border-orange-300',
+	sketchbook: 'border-amber-800',
+	procreate: 'border-pink-500',
+
+	illustration: 'border-yellow-400',
+	practice: 'border-gray-400',
+	design: 'border-purple-400',
+};
 
 const txhue = {
+	...art_tags,
+
 	violet: 'text-violet-400',
 	pink: 'text-pink-400',
 	blue: 'text-blue-400',
@@ -37,22 +65,24 @@ const txhue = {
 
 	firebase: 'text-yellow-600',
 
-    'bio-medical': 'text-red-200',
+	'bio-medical': 'text-red-200',
 
-    'webpage': 'text-green-200',
-    'UI/UX': 'text-cyan-600',
+	webpage: 'text-green-200',
+	'UI/UX': 'text-cyan-600',
 
-    'raspberry-pi': 'text-pink-500',
+	'raspberry-pi': 'text-pink-500',
 
-    'event': 'text-yellow-400',
-    'gratitude': 'text-white',
+	event: 'text-yellow-400',
+	gratitude: 'text-white',
 
-    'speech-processing': 'text-orange-500',
+	'speech-processing': 'text-orange-500',
 
-    'machine-learning': 'text-yellow-300',
+	'machine-learning': 'text-yellow-300',
 };
 
 const bhue = {
+	...art_tags_b,
+
 	violet: 'border-violet-400',
 	pink: 'border-pink-400',
 	blue: 'border-blue-400',
@@ -83,46 +113,45 @@ const bhue = {
 
 	firebase: 'border-yellow-600',
 
-    'bio-medical': 'border-red-200',
+	'bio-medical': 'border-red-200',
 
-    'webpage': 'border-green-200',
-    'UI/UX': 'border-cyan-600',
+	webpage: 'border-green-200',
+	'UI/UX': 'border-cyan-600',
 
-    'raspberry-pi': 'border-pink-500',
+	'raspberry-pi': 'border-pink-500',
 
-    'event': 'border-yellow-400',
-    'gratitude': 'border-white',
+	event: 'border-yellow-400',
+	gratitude: 'border-white',
 
-    'speech-processing': 'border-orange-500',
+	'speech-processing': 'border-orange-500',
 
-    'machine-learning': 'border-yellow-300',
+	'machine-learning': 'border-yellow-300',
 };
 
 const Tag: React.FC<Tag> = ({ tag }) => {
-    return (
-        <div
-            className={`mb-2 mr-4 rounded-s border-l-2 ${bhue[tag as keyof typeof bhue] ? bhue[tag as keyof typeof bhue] : 'border-white'} md:gap-8`}
-        >
-            <p
-                className={`text-lem text-in pl-2 text-center text-sm ${txhue[tag as keyof typeof txhue] ? txhue[tag as keyof typeof txhue] : 'text-white'}`}
-            >
-                {tag}
-            </p>
-        </div>
-    );
+	return (
+		<div
+			className={`mb-2 mr-4 rounded-s border-l-2 ${bhue[tag as keyof typeof bhue] ? bhue[tag as keyof typeof bhue] : 'border-white'} md:gap-8`}
+		>
+			<p
+				className={`text-lem text-in pl-2 text-center text-sm ${txhue[tag as keyof typeof txhue] ? txhue[tag as keyof typeof txhue] : 'text-white'}`}
+			>
+				{tag}
+			</p>
+		</div>
+	);
 };
 
 export const Tags: React.FC<Tags> = ({ tags }) => {
-    return (
+	return (
 		<>
-        {tags && (
-			<div className="mb-4 ml-8 flex flex-wrap">
-				{tags.map((tag) => (
-					<Tag key={tag} tag={tag} />
+			{tags && (
+				<div className="mb-4 ml-8 flex flex-wrap">
+					{tags.map((tag) => (
+						<Tag key={tag} tag={tag} />
 					))}
-			</div>
-		)}
+				</div>
+			)}
 		</>
-    );
+	);
 };
-
