@@ -33,13 +33,13 @@ const Article: React.FC<Props_article> = ({ post, views, page }) => {
 				<h2 className="z-20 font-display text-xl font-medium text-zinc-200 duration-1000 group-hover:text-white lg:text-3xl">
 					{post.title}
 				</h2>
+				<div className="mt-2">
+					<Tags tags={post.tags?.reverse()} />
+				</div>
 				<p className="z-20 mt-4 text-left text-sm  text-zinc-400 duration-1000 group-hover:text-zinc-200">
 					{post.description}
 				</p>
 			</article>
-			<div className="ml-4 md:ml-8">
-				<Tags tags={post.tags?.reverse()} />
-			</div>
 		</Link>
 	);
 };

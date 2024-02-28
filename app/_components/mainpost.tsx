@@ -49,7 +49,7 @@ const MainPost = ({
 					>
 						{mainPost.title}
 					</h2>
-					<div className="mt-4">
+					<div className="mt-2">
 						<Tags tags={mainPost.tags?.reverse()} />
 					</div>
 					<p className="mt-4 leading-8 text-zinc-400 duration-150 group-hover:text-zinc-300">
