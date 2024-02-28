@@ -124,7 +124,7 @@ const Tag: React.FC<Tag> = ({ tag }) => {
 	// console.log(bhue);
 	return (
 		<div
-			className={`mb-2 mr-4 rounded-s border-l-2 ${bhue[tag as keyof typeof bhue] ? bhue[tag as keyof typeof bhue] : 'border-white'} md:gap-8`}
+			className={`mb-2 mr-4 rounded-s border-l-2 ${bhue[tag as keyof typeof bhue] ? bhue[tag as keyof typeof bhue] : 'border-white'}`}
 		>
 			<p
 				className={`text-lem text-in pl-2 text-center text-sm ${txhue[tag as keyof typeof txhue] ? txhue[tag as keyof typeof txhue] : 'text-white'}`}
