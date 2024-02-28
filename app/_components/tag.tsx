@@ -78,9 +78,9 @@ const txhue = {
 	red: 'text-red-400',
 };
 
-const bhue = text2border(txhue);
 
 const Tag: React.FC<Tag> = ({ tag }) => {
+	const bhue = text2border(txhue);
 	return (
 		<div
 			className={`mb-2 mr-4 rounded-s border-l-2 ${bhue[tag as keyof typeof bhue] ? bhue[tag as keyof typeof bhue] : 'border-white'} md:gap-8`}
