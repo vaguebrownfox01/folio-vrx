@@ -122,10 +122,11 @@ const txhue = {
 //   }
 
 const Tag: React.FC<Tag> = ({ tag }) => {
-	const [bhue, txhue] = useState({});
+	const [bhue, setBhue] = useState({});
 
 	useEffect(() => {
-		const bhue = text2border(txhue);
+		const _bhue = text2border(txhue);
+		setBhue(_bhue);
 		console.log(bhue);
 	}, []);
 
