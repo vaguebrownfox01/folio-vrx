@@ -33,8 +33,8 @@ export const navs = [
 		href: '/posts/projects',
 	},
 	{
-		name: 'contact',
-		href: '/contact',
+		name: 'who?',
+		href: '/who',
 	},
 ];
 
@@ -77,21 +77,22 @@ export type Props_article = {
 export { Art, Note, Blog, Project };
 export { allArts, allNotes, allBlogs, allProjects };
 
-export const n_months = (dateString: string="1998-01-31") => {
-    const givenDate = new Date(dateString);
-    const currentDate = new Date();
-    const timeDifference = currentDate.getTime() - givenDate.getTime();
-    const monthsDifference = timeDifference / (1000 * 60 * 60 * 24 * 30.4375);
-    const roundedMonthsDifference = Math.round(monthsDifference);
-    return roundedMonthsDifference;
+export const n_months = (dateString: string = '1998-01-31') => {
+	const givenDate = new Date(dateString);
+	const currentDate = new Date();
+	const timeDifference =
+		currentDate.getTime() - givenDate.getTime();
+	const monthsDifference =
+		timeDifference / (1000 * 60 * 60 * 24 * 30.4375);
+	const roundedMonthsDifference = Math.round(monthsDifference);
+	return roundedMonthsDifference;
 };
 
 export const months = n_months();
 export const ratio = `${n_months()} of ${n_months() - n_months('2033-01-31')}`;
 export const mori = `a glimmering speck of dust for every month of my life thus far`;
 
-
- const art_tags = {
+const art_tags = {
 	'env.vua': 'xxx-violet-400',
 	jxp: 'xxx-pink-300',
 	fau: 'xxx-red-400',
@@ -106,7 +107,7 @@ export const mori = `a glimmering speck of dust for every month of my life thus 
 	paper: 'xxx-white',
 };
 
- const project_tags = {
+const project_tags = {
 	'spire-lab': 'xxx-orange-400',
 
 	'data-collection': 'xxx-yellow-500',
@@ -140,10 +141,10 @@ export const mori = `a glimmering speck of dust for every month of my life thus 
 };
 
 const note_tags = {
-	"flow": "xxx-white",
-}
+	flow: 'xxx-white',
+};
 
- const tag_colors = {
+const tag_colors = {
 	...art_tags,
 	...project_tags,
 	...note_tags,
@@ -155,7 +156,8 @@ const colorFormat = (tagColors: object) => {
 
 	// Iterate over original object and update values
 	for (const [key, value] of Object.entries(tagColors)) {
-		tagClass[key] = `${value.replace('xxx', "border")} ${value.replace('xxx', "text")}`;
+		tagClass[key] =
+			`${value.replace('xxx', 'border')} ${value.replace('xxx', 'text')}`;
 	}
 
 	// Return the new object
