@@ -1,3 +1,5 @@
+'use_client';
+
 import type {
 	Art,
 	Note,
@@ -137,23 +139,29 @@ export const mori = `a glimmering speck of dust for every month of my life thus 
 	'user-research': 'xxx-white',
 };
 
+const note_tags = {
+	"flow": "xxx-white",
+}
+
  const tag_colors = {
 	...art_tags,
 	...project_tags,
+	...note_tags,
 };
 
-const colorFormat = (tag_colors: object, replace_text: string) => {
+const colorFormat = (tagColors: object) => {
 	// Create a new object to avoid modifying the original
-	const borderTags: { [key: string]: string } = {};
+	const tagClass: { [key: string]: string } = {};
 
 	// Iterate over original object and update values
-	for (const [key, value] of Object.entries(tag_colors)) {
-		borderTags[key] = value.replace('xxx', replace_text);
+	for (const [key, value] of Object.entries(tagColors)) {
+		tagClass[key] = `${value.replace('xxx', "border")} ${value.replace('xxx', "text")}`;
 	}
 
 	// Return the new object
-	return borderTags;
+
+	console.log(tagClass);
+	return tagClass;
 };
 
-export const text_colors = colorFormat(tag_colors, 'text');
-export const border_colors = colorFormat(tag_colors, 'border');
+export const tag_class = colorFormat(tag_colors);
