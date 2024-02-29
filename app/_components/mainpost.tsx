@@ -57,7 +57,7 @@ const MainPost = ({
 					</p>
 
 					<div className="absolute bottom-4 md:bottom-8">
-						<p className="hidden text-zinc-200 hover:text-zinc-50 lg:block">
+						<p className="hidden font-extrabold text-zinc-200 underline underline-offset-4 hover:text-zinc-50 lg:block">
 							read more
 							<span aria-hidden="true">...</span>
 						</p>
