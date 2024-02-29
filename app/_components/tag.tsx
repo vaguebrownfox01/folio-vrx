@@ -44,7 +44,9 @@ const tag_color = {
 	c: 'border-pink-500 text-pink-500',
 	gratitude: 'border-white text-white',
 	'user-research': 'border-white text-white',
-	flow: 'border-white text-white'
+	flow: 'border-white text-white',
+
+	vrx: 'border-purple-400 text-purple-400',
   };	
 
 const Tag: React.FC<Tag> = ({ tag }) => {
