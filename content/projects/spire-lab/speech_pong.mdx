@@ -1,15 +1,15 @@
 ---
-title: "speeech pong!"
+title: 'speeech pong!'
 description: SPIRE Lab demo for IISc Open Day 2024
 repository:
-url: 
-date: "2024-02-24"
+url:
+date: '2024-02-24'
 published: true
 featured: -1
 tags:
-  - "spire-lab"
-  - "signal-processing"
-  - "raspberry-pi"
+    - 'spire-lab'
+    - 'signal-processing'
+    - 'raspberry-pi'
 ---
 
 ### Overview
@@ -17,57 +17,118 @@ tags:
 In SPIRE Lab, for IISc Open Day 2024, we developed an interactive game that challenges players to speak fast into a microphone to launch a ping pong ball out of a vertical tube! The winner gets a prize! others get a cookie for trying.. :D
 The goal was to apply speech processing techniques and simple embedded system to create a fun and engaging experience.
 
-<video style={{"margin": "auto"}} width="320" height="240" src="/images/projects/spire/speech-pong.mp4" type="video/mp4" controls />
-<p style={{ "text-align": "center", margin: "auto"}} width="320"> IISc professor giving it a shot! </p>
+<video
+	style={{ margin: 'auto', 'border-radius': '16px' }}
+	width="320"
+	height="240"
+	src="/images/projects/spire/speech-pong.mp4"
+	type="video/mp4"
+	controls
+/>
+<p
+	style={{
+		'text-align': 'center',
+		margin: 'auto',
+		'border-radius': '16px',
+}}
+	width="320"
+>
+	{' '}
+	IISc professor giving it a shot!{' '}
+</p>
 
 ### System Design
 
 The setup consisted of the following components:
-  - **Microphone** - to record the player's speech
-  - **Raspberry Pi** - for signal analysis and motor control
-  - **Motor driver circuit** - to control the DC motor
-  - **DC motor** - coupled to a fan to blow air into the tube
-  - **Transparent tube** - houses the ping pong ball
-  - **Stand** - to hold the tube and motor assembly
 
-<img style={{"margin": "auto"}} src="/images/projects/spire/speech-pong.png" alt="speech-pong" width="100%" height="600" />
-<p style={{ "text-align": "center", margin: "auto"}} width="320"> Block diagram showing the different components and connections </p>
+-   **Microphone** - to record the player's speech
+-   **Raspberry Pi** - for signal analysis and motor control
+-   **Motor driver circuit** - to control the DC motor
+-   **DC motor** - coupled to a fan to blow air into the tube
+-   **Transparent tube** - houses the ping pong ball
+-   **Stand** - to hold the tube and motor assembly
+
+<img
+	style={{ margin: 'auto', 'border-radius': '16px', 'box-shadow': '0 0 10px 0 #000'}}
+	src="/images/projects/spire/speech-pong.png"
+	alt="speech-pong"
+	width="100%"
+	height="600"
+/>
+<p
+	style={{
+		'text-align': 'center',
+		margin: 'auto',
+		'border-radius': '16px',
+}}
+	width="320"
+>
+	{' '}
+	Block diagram showing the different components and connections{' '}
+</p>
 
 The player's speech is recorded by the microphone and analyzed in real-time using **pitch-based** signal processing code to determine the speaking rate.
-The algorithm calculates the density of **voiced and unvoiced** segments in the speech signal to estimate the speaking rate. 
+The algorithm calculates the density of **voiced and unvoiced** segments in the speech signal to estimate the speaking rate.
 Voiced segments are identified using **autocorrelation** to detect pitch in bandpass filtered speech signal.
 As the measured speaking rate increases, the RPi controls the motor driver using **PWM** signals to proportionally increase the speed of the DC motor.
 
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/spire/openday-speech-pong.jpeg" alt="speech-pong-people" width="100%" height="600" />
-
+<img
+	style={{
+		margin: 'auto',
+		'border-radius': '16px',
+		padding: '8px',
+	}}
+	src="/images/projects/spire/openday-speech-pong.jpeg"
+	alt="speech-pong-people"
+	width="100%"
+	height="600"
+/>
 
 ### Challenges
-**Microphone Sensitivity and Noise Filtering**: Achieving accurate speech detection amidst background noise and the motor sound itself posed a significant challenge. 
+
+**Microphone Sensitivity and Noise Filtering**: Achieving accurate speech detection amidst background noise and the motor sound itself posed a significant challenge.
 Filtering out noise while capturing the player's speech required careful calibration and signal processing techniques.
 
-**Real-Time Signal Processing Optimization**: Implementing signal processing algorithms that could run efficiently in real-time on the Raspberry Pi was challenging. 
+**Real-Time Signal Processing Optimization**: Implementing signal processing algorithms that could run efficiently in real-time on the Raspberry Pi was challenging.
 Balancing computational complexity with speed and accuracy was crucial for responsive gameplay.
 
-**Motor Control Precision**: Tuning the motor control algorithm for smooth and precise control of the DC motor presented challenges. 
+**Motor Control Precision**: Tuning the motor control algorithm for smooth and precise control of the DC motor presented challenges.
 Ensuring that the motor responded accurately to changes in speaking rate without introducing jitter or lag required iterative testing and adjustment.
 For this, a non linear mapping of speaking rate to motor speed was implemented to ensure that the motor speed was not too sensitive to small changes in speaking rate.
 
-**Fan Placement and Airflow Dynamics**: Experimenting with the placement and orientation of the fan to achieve consistent and reliable ball launching was non-trivial. 
+**Fan Placement and Airflow Dynamics**: Experimenting with the placement and orientation of the fan to achieve consistent and reliable ball launching was non-trivial.
 Understanding airflow dynamics within the vertical tube and optimizing fan positioning for uniform airflow distribution required both theoretical knowledge and practical experimentation.
 
-**Integration and System Stability**: Integrating multiple components, including the microphone, RPi, motor driver, and DC motor, while ensuring overall system stability and reliability, was challenging. 
+**Integration and System Stability**: Integrating multiple components, including the microphone, RPi, motor driver, and DC motor, while ensuring overall system stability and reliability, was challenging.
 Ensuring that all components worked seamlessly together without interference or performance degradation was a continuous process of testing and refinement. As this has to keep working from morning to evening without a break.
 
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/spire/speech-pong-components.jpeg" alt="speech-pong-components" width="100%" height="600" />
+<img
+	style={{
+		margin: 'auto',
+		'border-radius': '16px',
+		padding: '8px',
+	}}
+	src="/images/projects/spire/speech-pong-components.jpeg"
+	alt="speech-pong-components"
+	width="100%"
+	height="600"
+/>
 
 In future, the game design and electronic hardware will be modularized to create a complete, easy to assemble product with 3D printed components.
-Overall, this fast-talking challenge game project was an engaging and attracted over 100+ participants, children and grownups alike! 
+Overall, this fast-talking challenge game project was an engaging and attracted over 100+ participants, children and grownups alike!
 
-I enjoy using my technical abilities in a creative application at the intersection of software, hardware, and human interaction. 
+I enjoy using my technical abilities in a creative application at the intersection of software, hardware, and human interaction.
 
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/spire/speech-pong-lil_helper.jpeg" alt="speech-pong-making" width="100%" height="600" />
-
+<img
+	style={{
+		margin: 'auto',
+		'border-radius': '16px',
+		padding: '8px',
+	}}
+	src="/images/projects/spire/speech-pong-lil_helper.jpeg"
+	alt="speech-pong-making"
+	width="100%"
+	height="600"
+/>
 
 {/* Image: of the setup and people */}
-
-  

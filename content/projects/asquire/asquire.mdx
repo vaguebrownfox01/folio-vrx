@@ -1,12 +1,12 @@
 ---
 title: asquire
 description: A vocal sound based asthma diagnosis and monitoring app
-date: "2020-10-03"
+date: '2020-10-03'
 repository: https://github.com/vaguebrownfox01/asquire-vowtiar.git
 url: https://asquire.web.app/
 published: true
 featured: 3
-tags: 
+tags:
     - spire-lab
     - data-collection
     - web-app
@@ -31,8 +31,17 @@ solution.
 
 ### System design
 
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/asquire/asquire-pipeline.jpg" alt="speech-pong-components" width="100%" height="600" />
-
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/asquire/asquire-pipeline.jpg"
+	alt="speech-pong-components"
+	width="100%"
+	height="600"
+/>
 
 #### Data Collection and Processing
 
@@ -64,41 +73,72 @@ To contribute to the Asquire project:
 8. Bonus! There is a fun voice changing interface you can play with!
 
 ### Tech stack
+
 React, Firebase, Affinity Designer, Python Pandas, Machine Learning
 
 ### App screenshots
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/asquire/asquire_app-screen.png" alt="speech-pong-components" width="100%" height="600" />
 
-<span style={{"display": "flex"}}>
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/asquire/asquire_app-screen2.png" alt="speech-pong-components" width="50%" height="200" />
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/asquire/aasquire_app-screen3.png" alt="speech-pong-components" width="50%" height="200" />
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/asquire/asquire_app-screen.png"
+	alt="speech-pong-components"
+	width="100%"
+	height="600"
+/>
+
+<span style={{ display: 'flex' }}>
+	<img
+		style={{
+			margin: 'auto',
+			padding: '8px',
+			'border-radius': '16px',
+		}}
+		src="/images/projects/asquire/asquire_app-screen2.png"
+		alt="speech-pong-components"
+		width="50%"
+		height="200"
+	/>
+	<img
+		style={{
+			margin: 'auto',
+			padding: '8px',
+			'border-radius': '16px',
+		}}
+		src="/images/projects/asquire/aasquire_app-screen3.png"
+		alt="speech-pong-components"
+		width="50%"
+		height="200"
+	/>
 </span>
 
 ### Challenges
 
-**Data Quality and Consistency**: Ensuring the quality and consistency of voice data collected from various users posed a significant challenge. 
+**Data Quality and Consistency**: Ensuring the quality and consistency of voice data collected from various users posed a significant challenge.
 Differences in recording **environments, microphone quality, and user proficiency** could introduce variability in the collected data, impacting the effectiveness of the machine learning models.
 So we had to implement a robust data validation and preprocessing pipeline to address these challenges. Along with we created **in-app video + audio instructions** to guide the users through the recording process.
 
-**Model Generalization and Robustness**: Developing machine learning models that generalize well across diverse populations and are robust to variations in voice characteristics presented challenges. 
+**Model Generalization and Robustness**: Developing machine learning models that generalize well across diverse populations and are robust to variations in voice characteristics presented challenges.
 Ensuring that the models could accurately diagnose asthma **across different age groups, genders, and ethnicities** while avoiding overfitting to specific data distributions required rigorous validation and testing.
 
-**Feature Extraction and Representation**: Extracting relevant features from voice data for use in machine learning models required careful consideration. 
-Identifying informative features related to asthma diagnosis, such as frequency characteristics of breath sounds or cough patterns, while filtering out irrelevant noise, 
+**Feature Extraction and Representation**: Extracting relevant features from voice data for use in machine learning models required careful consideration.
+Identifying informative features related to asthma diagnosis, such as frequency characteristics of breath sounds or cough patterns, while filtering out irrelevant noise,
 was a complex task that required expertise in **signal processing**.
 
-
-**Privacy and Ethical Considerations**: Addressing privacy concerns and ensuring ethical use of collected voice data was a key challenge. 
+**Privacy and Ethical Considerations**: Addressing privacy concerns and ensuring ethical use of collected voice data was a key challenge.
 Implementing robust data anonymization techniques and obtaining informed consent from users.
 We obtained ethical clearance from the **Institutional Ethics Committee (IEC) of St.John's Hospital**, Bangalore, under the guidance of pulmonologists to ensure that the project adhered to ethical guidelines and data protection regulations.
 
-**Integration and Scalability**: Integrating the various components of the Asquire system, including the web application, data processing pipeline, machine learning models, and user interface, 
-while ensuring scalability and reliability, presented challenges. 
+**Integration and Scalability**: Integrating the various components of the Asquire system, including the web application, data processing pipeline, machine learning models, and user interface,
+while ensuring scalability and reliability, presented challenges.
 Balancing system performance with resource constraints and accommodating potential future growth required careful architectural design and optimization.
 
-**User Engagement and Participation**: Encouraging user engagement and participation in data collection activities was crucial for the success of the project. 
-Designing intuitive user interfaces, providing clear instructions, and offering incentives for participation were strategies employed to overcome this challenge 
-and ensure a sufficient volume of high-quality voice data for model training. 
+**User Engagement and Participation**: Encouraging user engagement and participation in data collection activities was crucial for the success of the project.
+Designing intuitive user interfaces, providing clear instructions, and offering incentives for participation were strategies employed to overcome this challenge
+and ensure a sufficient volume of high-quality voice data for model training.
 We designed a **student volunteer scheme** where students could contribute to the project and earn by bringing in more users.
 
 ### Impact
@@ -107,10 +147,37 @@ We collected around 10 hours of data from 200+ users. The data was annotated usi
 The data collected is being used to develop machine learning models for asthma diagnosis and monitoring.
 
 {/* <span style={{"display": "flex"}}> */}
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/asquire/asquire_data_gender.png" alt="speech-pong-components" width="70%" height="200" />
-<p style={{ "text-align": "center", margin: "auto"}} width="320"> Gender distribution </p>
 
-<img style={{"margin": "auto", padding: "8px"}} src="/images/projects/asquire/asquire_data_age.png" alt="speech-pong-components" width="90%" height="200" />
-<p style={{ "text-align": "center", margin: "auto"}} width="320"> Age distribution </p>
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/asquire/asquire_data_gender.png"
+	alt="speech-pong-components"
+	width="70%"
+	height="200"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+	{' '}
+	Gender distribution{' '}
+</p>
+
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/asquire/asquire_data_age.png"
+	alt="speech-pong-components"
+	width="90%"
+	height="200"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+	{' '}
+	Age distribution{' '}
+</p>
 
 {/* </span> */}
