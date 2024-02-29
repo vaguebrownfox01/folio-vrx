@@ -87,3 +87,57 @@ export const n_months = (dateString: string="1998-01-31") => {
 export const months = n_months();
 export const ratio = `${n_months()} of ${n_months() - n_months('2033-01-31')}`;
 export const mori = `a glimmering speck of dust for every month of my life thus far`;
+
+
+export const art_tags = {
+	'env.vua': 'xxx-violet-400',
+	jxp: 'xxx-pink-300',
+	fau: 'xxx-red-400',
+
+	concepts: 'xxx-orange-300',
+	sketchbook: 'xxx-amber-800',
+	procreate: 'xxx-pink-500',
+
+	illustration: 'xxx-yellow-400',
+	practice: 'xxx-gray-400',
+	design: 'xxx-purple-400',
+	paper: 'xxx-white',
+};
+
+export const project_tags = {
+	'spire-lab': 'xxx-orange-400',
+
+	'data-collection': 'xxx-yellow-500',
+	'react-js': 'xxx-cyan-400',
+	'bio-medical': 'xxx-red-200',
+	'product-design': 'xxx-pink-300',
+	'machine-learning': 'xxx-yellow-300',
+	klatt: 'xxx-green-400',
+
+	'signal-processing': 'xxx-violet-400',
+	'speech-processing': 'xxx-orange-500',
+	'ml-ops': 'xxx-yellow-400',
+	fusion360: 'xxx-orange-200',
+	'web-app': 'xxx-green-400',
+	matlab: 'xxx-orange-400',
+	firebase: 'xxx-yellow-600',
+	webpage: 'xxx-green-200',
+	'UI/UX': 'xxx-cyan-600',
+	'raspberry-pi': 'xxx-pink-500',
+	event: 'xxx-yellow-400',
+	'embedded-sys': 'xxx-violet-400',
+
+	'app-dev': 'xxx-blue-500',
+	android: 'xxx-green-500',
+
+	python: 'xxx-blue-400',
+	c: 'xxx-pink-500',
+
+	gratitude: 'xxx-white',
+	'user-research': 'xxx-white',
+};
+
+export const tag_colors = {
+	...art_tags,
+	...project_tags,
+};
