@@ -160,7 +160,7 @@ const colorFormat = (tagColors: object) => {
 
 	// Return the new object
 
-	console.log(tagClass);
+	// console.log(tagClass);
 	return tagClass;
 };
 

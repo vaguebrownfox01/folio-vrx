@@ -13,7 +13,7 @@ const tag_color = {
 	jxp: 'border-pink-300 text-pink-300',
 	fau: 'border-red-400 text-red-400',
 	concepts: 'border-orange-300 text-orange-300',
-	sketchbook: 'border-amber-800 text-amber-800',
+	sketchbook: 'border-amber-600 text-amber-600',
 	procreate: 'border-pink-500 text-pink-500',
 	illustration: 'border-yellow-400 text-yellow-400',
 	practice: 'border-gray-400 text-gray-400',
@@ -47,7 +47,8 @@ const tag_color = {
 	flow: 'border-white text-white',
 
 	vrx: 'border-purple-400 text-purple-400',
-  };	
+	painting: 'border-lime-300 text-lime-300',
+};
 
 const Tag: React.FC<Tag> = ({ tag }) => {
 	// console.log(tag_class);
