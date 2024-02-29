@@ -34,7 +34,7 @@ The setup consisted of the following components:
 <p style={{ "text-align": "center", margin: "auto"}} width="320"> Block diagram showing the different components and connections </p>
 
 The player's speech is recorded by the microphone and analyzed in real-time using **pitch-based** signal processing code to determine the speaking rate.
-The algorithm calcultes the density of **voiced and unvoiced** segments in the speech signal to estimate the speaking rate. 
+The algorithm calculates the density of **voiced and unvoiced** segments in the speech signal to estimate the speaking rate. 
 Voiced segments are identified using **autocorrelation** to detect pitch in bandpass filtered speech signal.
 As the measured speaking rate increases, the RPi controls the motor driver using **PWM** signals to proportionally increase the speed of the DC motor.
 
