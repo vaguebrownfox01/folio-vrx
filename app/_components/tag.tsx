@@ -1,5 +1,3 @@
-'use_client';
-
 import { border_colors, text_colors } from "./about";
 
 type Tag = {
@@ -17,12 +15,15 @@ const Tag: React.FC<Tag> = ({ tag }) => {
 	// console.log(tag, undefined ? "true" : "false");
 	// console.log(txhue[tag as keyof typeof txhue].replace('text', 'border'));
 
+	const border_style = `mb-2 mr-4 rounded-s border-l-2 ${border_colors[tag as keyof typeof border_colors]}`
+	const text_style = `pl-2 text-center text-sm ${text_colors[tag as keyof typeof text_colors]}`
+
 	return (
 		<div
-			className={`mb-2 mr-4 rounded-s border-l-2 ${border_colors[tag as keyof typeof border_colors]}`}
+			className={border_style}
 		>
 			<p
-				className={`pl-2 text-center text-sm ${text_colors[tag as keyof typeof text_colors]}`}
+				className={text_style}
 			>
 				{tag}
 			</p>
