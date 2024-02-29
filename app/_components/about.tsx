@@ -89,7 +89,7 @@ export const ratio = `${n_months()} of ${n_months() - n_months('2033-01-31')}`;
 export const mori = `a glimmering speck of dust for every month of my life thus far`;
 
 
-export const art_tags = {
+ const art_tags = {
 	'env.vua': 'xxx-violet-400',
 	jxp: 'xxx-pink-300',
 	fau: 'xxx-red-400',
@@ -104,7 +104,7 @@ export const art_tags = {
 	paper: 'xxx-white',
 };
 
-export const project_tags = {
+ const project_tags = {
 	'spire-lab': 'xxx-orange-400',
 
 	'data-collection': 'xxx-yellow-500',
@@ -137,7 +137,23 @@ export const project_tags = {
 	'user-research': 'xxx-white',
 };
 
-export const tag_colors = {
+ const tag_colors = {
 	...art_tags,
 	...project_tags,
 };
+
+const colorFormat = (tag_colors: object, replace_text: string) => {
+	// Create a new object to avoid modifying the original
+	const borderTags: { [key: string]: string } = {};
+
+	// Iterate over original object and update values
+	for (const [key, value] of Object.entries(tag_colors)) {
+		borderTags[key] = value.replace('xxx', replace_text);
+	}
+
+	// Return the new object
+	return borderTags;
+};
+
+export const text_colors = colorFormat(tag_colors, 'text');
+export const border_colors = colorFormat(tag_colors, 'border');

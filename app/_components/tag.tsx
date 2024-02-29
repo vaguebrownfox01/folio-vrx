@@ -1,6 +1,6 @@
 'use_client';
 
-import { tag_colors } from "./about";
+import { border_colors, tag_colors, text_colors } from "./about";
 
 type Tag = {
 	tag: string;
@@ -19,10 +19,10 @@ const Tag: React.FC<Tag> = ({ tag }) => {
 
 	return (
 		<div
-			className={`mb-2 mr-4 rounded-s border-l-2 ${tag_colors[tag as keyof typeof tag_colors]?.replace('xxx', 'border')}`}
+			className={`mb-2 mr-4 rounded-s border-l-2 ${border_colors[tag as keyof typeof border_colors]}`}
 		>
 			<p
-				className={`pl-2 text-center text-sm ${tag_colors[tag as keyof typeof tag_colors]?.replace('xxx', 'text')}`}
+				className={`pl-2 text-center text-sm ${text_colors[tag as keyof typeof text_colors]}`}
 			>
 				{tag}
 			</p>
