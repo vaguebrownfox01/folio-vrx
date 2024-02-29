@@ -1,6 +1,6 @@
 'use_client';
 
-import { border_colors, tag_colors, text_colors } from "./about";
+import { border_colors, text_colors } from "./about";
 
 type Tag = {
 	tag: string;
