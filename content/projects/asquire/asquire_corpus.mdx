@@ -1,19 +1,75 @@
 ---
-title: "asquire corpus"
+title: 'asquire corpus'
 description: Asquire corpus is a dataset of demographic data and various vocal sound of recorded using smartphone.
-repository:
-url: 
-date: "2024-01-26"
+repository: https://github.com/vaguebrownfox01/pnoi-corpus_etl.git
+url:
+date: '2023-06-16'
 published: true
 featured: -1
 tags:
-  - "spire-lab"
-  - "ml-ops"
-  - "python"
+    - 'spire-lab'
+    - 'ml-ops'
+    - 'python'
 ---
 
-todo:
-  - data schema, muster table
-  - data stats and plots
-  - mlops for training and inference
-  - experiment design and results
+### Description
+
+Asquire Corpus is a collection of breath sounds, cough, and sustained phonation of vowels recorded from the mouth of both healthy subjects and individuals diagnosed with asthma.
+The dataset also includes biodata, subject's response to a standard performa and pulmonary function test (PFT) reports.
+The data will be used to develop a AI model to predict the status of lung using various speech and non-speech sounds recorded with a smartphone.
+
+### Objective
+
+-   Determine which phonation is best for predicting the status of lung.
+-   To develope a reliable AI model to predict status of lung.
+-   Develop a disgnosis tool for asthma using smartphone.
+
+### My Role
+
+By wearing a data engineer hat for the Asquire project, I designed the data pipeline, annotation scheme, metadata structure, and formatting of the dataset.
+This involved collaborating with pulmonologists to determine data needs, setting up audio recording workflows, devising a biodata questionnaire, and structuring the dataset for easy research use.
+
+I developed a complete **ETL pipeline** to process audio data, generate for data and annotation quality report, and prepare the dataset for machine learning.
+My technical contributions were essential to building this resource.
+
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/asquire/asq_data-anote.png"
+	alt="asquire data annotation"
+	width="70%"
+	height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+	{'Sample annotation of asquire data on Audacity'}
+</p>
+
+### Data Collection
+
+The recordings were captured using three types of smartphone, from low-end to high-end devices.
+The data of healthy subject was croudsourced from the general public, while the data of asthmatic subjects was collected from the Pulmonary Health Science department of St. John Hospital.
+
+Sounds of five breath, five coughs, and seven phonations were recored from a specific distance from the mouth with a smartphone using asquire web-app.
+For asthmatic subjects, a post recording was made ofter administering a bronchodilator. The post recording was made 15 minutes after the administration of the bronchodilator.
+The post recording was made to assess the effect of the bronchodilator on the subject's breathing sounds.
+
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/asquire/asquire-flyer.png"
+	alt="asquire-flyer"
+	width="50%"
+	height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }}>
+	{'Asquire Flyer for data collection'}
+</p>
+
+The dataset consists of 150 asthma patients and 150 control subjects, totaling 300 recordings.
+Each recording is accompanied by corresponding metadata, including demographic information, medical history, and the results of the PFT report.

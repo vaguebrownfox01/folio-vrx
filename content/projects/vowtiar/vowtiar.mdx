@@ -1,13 +1,60 @@
 ---
 title: vowtiar
 description: Vowel Triangle Area estimation using signal processing and machine learning
-date: "2024-04-10"
+date: '2024-04-10'
 repository:
 url: https://github.com/vaguebrownfox01/vowtiar-formant_estimation.git
 published: true
 featured: 3
-tags: 
+tags:
     - spire-lab
     - speech-processing
     - machine-learning
 ---
+
+#### Overview
+
+Formant frequencies are important acoustic features used to characterize vowels and model voice quality.
+Accurate formant estimation is critical for many speech analysis applications like speaker verification, speech disorder diagnosis, and more.
+However, estimating formants is challenging, especially in noisy conditions.
+
+In this project, the aim is to develope a robust formant estimation algorithm using signal processing and deep learning techniques.
+The goal was to improve formant estimation accuracy compared to existing methods like PRAAT and Deep Formants.
+Accurate formants can help construct precise vowel spaces used to assess speech disorders.
+
+#### Methodology
+
+To create training data, I synthesized a dataset of vowel sounds with known formant frequencies using Klatt synthesis.
+Formant values were derived from real speech in the TIMIT dataset and extracted using PRAAT software.
+
+The synthetic vowel dataset allowed comparison of the algorithm's predicted formants versus ground truth values during training and evaluation.
+Noise was added to the clean samples (additive gaussian noise and reverberation) to train the model to handle noisy speech.
+
+The formant estimation algorithm combines classic DSP techniques like LPC analysis with neural network acoustic models.
+The neural network learns the mapping between input speech and formant frequencies.
+
+#### Dataset
+
+The synthetic vowel dataset consists of 15,377 samples of vowel sounds (/iy/, /ae/, /er/, /aa/, /uw/, /ih/, /ao/, /axr/, /ow/, /ix/, /eh/, /oy/, /ay/, /ax/, /ux/, /aw/, /ah/, /ey/, /uh/, /ax-h/) extracted from TIMIT dataset.
+
+#### Scatter plot of various
+
+<iframe
+	width="100%"
+	style={{ margin: '0 auto 16px', display: 'block' }}
+	height={1316}
+	frameBorder={0}
+	src="https://observablehq.com/embed/@spire-vrx/synthvowel-formants-scatterplot?cells=chart%2Cviewof+select%2Cviewof+selected_vowels%2Cviewof+selected_gender%2Cviewof+x_axis_label%2Cviewof+y_axis_label"
+/>
+
+#### Challenges
+
+-   Generating sufficiently varied and robust synthetic training data
+-   Scripts to automate the generation of synthetic data
+-   Finding the right neural network architecture to model formants accurately
+-   Reducing error on high pitched voices and noisy signals
+-   Avoiding overfitting on limited training data
+
+#### For further details, refer
+- [Vowtiar Formant Estimation](/posts/vowtiar/vowtiar-formant-estimation)
+- [Vowtiar Vowel Synth](/posts/vowtiar/vowtiar-vowel-synth)
