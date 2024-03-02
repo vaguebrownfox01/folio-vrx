@@ -1,23 +1,135 @@
 ---
-title: "pnoistor data collection"
+title: 'pnoistor data collection'
 description: A system designed for acquiring simultaneously recorded breath data from asthematic and control subjects for pnoi corpus.
-repository:
-url: 
-date: "2024-01-26"
+repository: https://github.com/vaguebrownfox01/pnoi-data_store.git
+url: https://pnoistor.web.app
+date: '2024-01-26'
 published: true
 featured: -1
 tags:
-  - "spire-lab"
-  - "web-app"
-  - "react-js"
-  - "firebase"
+    - 'spire-lab'
+    - 'web-app'
+    - 'react-js'
+    - 'firebase'
 ---
 
-todo
-- data collection system 
-- table design
-- pnoi-stor app
-- nomenclature for data
-- data collection protocol: rationale
-- breathing protocol: rationale
-- annotation protocol
+#### Overview
+
+Pnoistor is a web application designed to aid data collection for the <a href="/posts/projects/pnoi-phone/pnoi-phone">Pnoi-phone</a> project.
+It serves as a centralized platform for organizing, managing, and validating the dataset of respiratory sounds recorded simultaneously from the mouth and chest,
+along with associated metadata.
+
+The app adhers to the **data collection protocol** and **annotation scheme** defined for the Pnoi-phone project, ensuring the systematic collection of data.
+
+#### Purpose
+
+Pnoistor is an essential component of the Phoi-phone project, facilitating the systematic collection and management of respiratory sound data and associated metadata.
+It is built to ensure a streamlined data collection pipeline for the development of an AI model aimed at predicting pulmonary function test (PFT) values using
+respiratory sounds recorded simultaneously from the mouth and chest.
+
+#### Features
+
+Pnoistor offers the following key features:
+
+-   **Centralized Data Organization**: Pnoistor provides a centralized platform to organize and manage the dataset of respiratory sounds recorded simultaneously from the mouth and chest. The data is uploaded and organised in cloud storage.
+
+-   **Metadata Recording**: The application allows the recording of subjects' metadata associated with the respiratory sound data. This metadata helps in further analysis and contextualizing the collected data.
+
+-   **Data File Renaming**: Pnoistor assists in automatically renaming data files to ensure consistency and ease of identification. The file nomeclature is defined in the Pnoi annotation scheme.
+
+-   **Data Validation**: Pnoistor aids in identifying missing data files, ensuring the completeness of the dataset and preventing data loss. Further tests are done using pnoi-anotest
+
+-   **Authentication and Authorization**: Only authorized project team members can access the Pnoistor web application, providing a secure environment for data collection.
+
+-   **Device Compatibility**: Pnoistor is designed to be accessed and used on any device, ensuring flexibility and ease of use.
+
+#### Technologies
+
+React, Firebase, Material-UI, Node.js
+
+#### Screenshots
+
+<div style={{display: "flex"}}>
+
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoistor-app-biodata.png"
+	alt="pnoistor-app-screen"
+	width="50%"
+	height="600"
+/>
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoistor-app_screen.png"
+	alt="pnoistor-app-screen"
+	width="50%"
+	height="600"
+/>
+
+
+</div>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"biodata field and data upload section"}
+</p>
+
+#### Pnoi Annotation Scheme
+
+Designed to ensure systematic collection of data, the Pnoi annotation scheme defines the nomenclature for data files, the data collection protocol, and the annotation protocol.
+The scheme is designed to ensure consistency and ease of identification of data files, and to provide a standardized approach to data collection and annotation.
+
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoi-annotation_scheme.png"
+	alt="image-alt"
+	width="100%"
+	height="600"
+/>
+
+#### Pnoi Data Collection Protocol
+
+The Pnoi data collection protocol defines the rationale for the data collection process, including the breathing protocol and well defined steps to follow.
+The protocol is designed with help of pulmonologist to ensure the systematic collection of data and to provide a safe standardized approach.
+
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoi-data-collection-protocol.png"
+	alt="pnoi-datacollection-protocol"
+	width="100%"
+	height="600"
+/>
+
+#### Pnoi Recording table
+
+A recording table with adjustible height, designed to hold the data collection device and the subject in a comfortable position.
+It is to ensure recorded data is consistent and reliable across all subjects.
+
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoi-recording-table.jpg"
+	alt="pnoi-recording-table"
+	width="100%"
+	height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+	{'recording table, design process and final product'}
+</p>
