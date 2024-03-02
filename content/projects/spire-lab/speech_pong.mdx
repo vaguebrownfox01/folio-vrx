@@ -5,7 +5,7 @@ repository:
 url:
 date: '2024-02-24'
 published: true
-featured: -1
+featured: 3
 tags:
     - 'spire-lab'
     - 'signal-processing'
@@ -30,11 +30,10 @@ The goal was to apply speech processing techniques and simple embedded system to
 		'text-align': 'center',
 		margin: 'auto',
 		'border-radius': '16px',
-}}
+	}}
 	width="320"
 >
-	{' '}
-	IISc professor giving it a shot!{' '}
+	{"IISc professor giving it a shot!"}
 </p>
 
 ### System Design
@@ -49,7 +48,11 @@ The setup consisted of the following components:
 -   **Stand** - to hold the tube and motor assembly
 
 <img
-	style={{ margin: 'auto', 'border-radius': '16px', 'box-shadow': '0 0 10px 0 #000'}}
+	style={{
+		margin: 'auto',
+		'border-radius': '16px',
+		'box-shadow': '0 0 10px 0 #000',
+	}}
 	src="/images/projects/spire/speech-pong.png"
 	alt="speech-pong"
 	width="100%"
@@ -60,11 +63,10 @@ The setup consisted of the following components:
 		'text-align': 'center',
 		margin: 'auto',
 		'border-radius': '16px',
-}}
+	}}
 	width="320"
 >
-	{' '}
-	Block diagram showing the different components and connections{' '}
+	{"Block diagram showing the different components and connections"}
 </p>
 
 The player's speech is recorded by the microphone and analyzed in real-time using **pitch-based** signal processing code to determine the speaking rate.
