@@ -1,7 +1,7 @@
 ---
 title: pnoi-phone
 description: A bio-medical system/device for breath-focused acoustic diagnosis and monitoring of pulmonary diseases. Funded by Department of Science and Technology Govt. of India, and it is developed under SPIRE Lab, IISc Bangalore in collaboration with St. John's Hospital, Bangalore.
-repository: 
+repository:
 url: https://pnoiphone.vercel.app/
 date: 2020-07-01
 published: true
@@ -59,18 +59,27 @@ is crucial for enhancing patient outcomes.
 />
 
 #### My Roles:
--  **Project Lead**: Conceptualised and designed the Pnoi-phone device and
-	system, and led the project from ideation to implementation.
--  **Product Design**: Designed the Pnoi-phone device and system, including the
-	embedded system, data acquisition, and processing algorithms.
--  **AI Modelling**: Developed AI models to predict PFT values from breath
-	sounds and conducted feature engineering and selection.
--  **Data Collection**: Coordinated the collection of multimodal breath sounds and
-	PFT data from patients and controls.
--  **Embedded System Design**: Designed and developed the embedded system for the
-	Pnoi-phone device.
--  **Android App Development**: Designed and developed the Pnoi-phone android app for
-	data acquisition and visualisation.
+
+-   **Project Lead**: Conceptualised and designed the Pnoi-phone device and
+    system, and led the project from ideation to implementation.
+-   **Product Design**: Designed the Pnoi-phone device and system, including the
+    embedded system, data acquisition, and processing algorithms.
+-   **AI Modelling**: Developed AI models to predict PFT values from breath
+    sounds and conducted feature engineering and selection.
+-   **Data Collection**: Coordinated the collection of multimodal breath sounds and
+    PFT data from patients and controls.
+-   **Embedded System Design**: Designed and developed the embedded system for the
+    Pnoi-phone device.
+-   **Android App Development**: Designed and developed the Pnoi-phone android app for
+    data acquisition and visualisation.
+
+#### Significance
+
+Asthma is one of the most common chronic diseases among children worldwide.
+It affected an estimated **262 million people** in 2019 and caused **4,61,000 deaths** [1].
+Meanwhile, Chronic Obstructive Pulmonary Disease (**COPD**) is the third leading cause of death worldwide, causing **3.23 million deaths** in the same year [1].
+Treatment and effective management of asthma and COPD can save lives. The **underdiagnosis of respiratory diseases** is a significant societal challenge that affects people globally.
+Many people with these diseases are not diagnosed on time, and this can lead to chronic health problems, <u>reduced quality of life, and even premature death</u>.
 
 #### Current methods and challenges
 
@@ -84,23 +93,29 @@ is crucial for enhancing patient outcomes.
 <p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
 	{'Fig: Spirometry process'}
 </p>
+Respiratory diseases are diagnosed using medical history, physical
+examination, and breathing tests like **spirometry; a gold standard
+test**[2]. Spirometry measures lung function to check signs of airway
+obstruction and other respiratory issues. However, there are
+challenges associated with the test, such as requiring patient
+cooperation, coordination, and effort to obtain reliable results. The
+test's repeatability is limited, and equipment malfunctions and
+calibration can induce variability, affecting the accuracy of the
+result. The **complexity, high cost, and limited availability** of
+spirometric testing hinder a significant portion of the population
+from obtaining an accurate diagnosis and treatment for respiratory
+diseases [2].
 
-Spirometry is a gold standard test for obstructive lung diseases. But it is
-requires expensive equipment to conduct Pulmonary Test Function (PFT) for
-diagnosis and monitoring of the disease. Also, the spirometric test is complex
-and sternuous for patients. The sounds of breath are adversly effected by
-diseases like Asthma and COPD.
+#### Solution
 
-#### Motivation
+Our innovation aspires to address the issue by introducing an innovative **acoustic-based method** to evaluate pulmonary function test values (PFT) 
+that can be effectively used for the diagnosis and monitoring of asthma. 
+This method involves a device called **Pnoi-phone** that can capture and analyse multimodal breath sounds with **AI powered systems** to **identify abnormal patterns** indicative of respiratory diseases. 
+It also offers **real-time, non-invasive monitoring** capabilities that enable healthcare professionals and patients to detect abnormalities early, 
+track disease progression continuously, and assess treatment effectiveness.
+With the help of Pnoi-phone, healthcare professionals, especially in **remote clinics**, can accurately and effortlessly diagnose respiratory diseases, allowing for early intervention and treatment.
 
-The Pnoi-phone addresses these challenges by offering **real-time, non-invasive
-monitoring** capabilities that enable healthcare professionals and patients to
-detect abnormalities early, track disease progression continuously, and assess
-treatment effectiveness. Its **portability and user-friendliness** enhance its
-practicality in diverse clinical settings. This innovation arises from the
-**simultaneous recording of breath sounds from two distinct sources** and
-advanced data processing algorithms, differentiating it from conventional
-methods.
+#### Proof of Concept
 
 <img
 	style={{
@@ -115,11 +130,44 @@ methods.
 <p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
 	{'Fig: Relationship between diseases and breath sounds'}
 </p>
+In Table 1 above, the first column shows the location of the sound from the upper airway to the lower airway with the corresponding sound type in relation to the associated disease [6][7]. 
+The sounds from these airways can provide information that encodes the **sound signature of the disease**.
+**Auscultation** is an essential physical examination. It is non-invasive, easy, and cost-effective. 
+It requires minimal cooperation from the patient and can be repeated many times without any side effects, making it an optimal technique for prognosis [3]. 
+
+However, it requires years of experience and specialisation to interpret the **auditory information** of lung breath sounds. 
+The current technology of **digital stethoscopes** allows physicians to record the auscultation, enhance the sounds, and store the recording for future reference along with other useful features [4]. 
+With these advantages on hand, it opens up a research path for exploring ways to *automate diagnosing and monitoring respiratory disease* using the sound of breath to provide better and **scalable methods** [5]. 
+There are several studies based on the classification of auscultation sounds.
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-phone_prototype-inuse.png"
+alt="pnoi-phone_prototype-inuse"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Fig: Pnoi-phone prototype in use"}
+</p>
+
+Successful scaling up and introducing the Pnoi-phone into healthcare would require several key considerations. 
+Firstly, the device must be **affordable, portable, and easy to use**, especially in rural areas with limited resources. 
+The cost of the device and the test will be significantly low. 
+Additionally, the training of healthcare workers to use the device effectively and interpret the results correctly must be relatively more straightforward than that of their existing counterparts. 
+An infrastructure to support the usage of this device for developing systems for **collecting, storing, and analysing data**. 
+Enable research to ensure that the device is used correctly and that patients receive optimal care.
 
 In summary, the Pnoi-phone represents a transformative advancement in
 respiratory healthcare, promising improved patient outcomes and cost-effective
 disease management through its unique approach, real-time monitoring
-capabilities, and innovative AI technology. The project is funded by Department
+capabilities, and innovative AI technology. 
+
+The project is funded by Department
 of Science and Technology Govt. of India, and it is developed under SPIRE Lab,
 IISc Bangalore in collaboration with St. John's Hospital, Bangalore.
 
@@ -131,3 +179,10 @@ IISc Bangalore in collaboration with St. John's Hospital, Bangalore.
 -   [Product Design](/posts/projects/pnoi-phone_product-design): Design and development of Pnoi-phone biomedical device integrated with AI models to diagnose and monitor airway diseases.
 -   [Embedded System Design](/posts/projects/pnoi-phone_esd): Design and development of embedded system for Pnoi-phone biomedical device.
 -   [Pnoi-phone App](/posts/projects/pnoi-phone_app): Design and development of Pnoi-phone android app.
+
+###### References
+1. Global burden of 369 diseases and injuries in 204 countries and territories, 1990–2019: a systematic analysis for the Global Burden of Disease Study 2019. Lancet. 2020;396(10258):1204-22
+2. Vanjare, Nitin, et al. "Use of spirometry among chest physicians and primary care physicians in India." NPJ primary care respiratory medicine 26.1 (2016): 1-5.
+3. Bohadana, Abraham, Gabriel Izbicki, and Steve S. Kraman. "Fundamentals of lung auscultation." New England Journal of Medicine 370.8 (2014): 744-751.
+4. Rennoll, Valerie, et al. "Electronic stethoscope filtering mimics the perceived sound characteristics of acoustic stethoscope." IEEE journal of biomedical and health informatics 25.5 (2020): 1542-1549.
+5. Liu, Xiaoxuan, et al. "A comparison of deep learning performance against health-care professionals in detecting diseases from medical imaging: a systematic review and meta-analysis." The lancet digital health 1.6 (2019): e271-e297.
