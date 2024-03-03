@@ -12,9 +12,200 @@ tags:
   - "c"
 ---
 
-todo:
+#### Overview
+The Pnoi-phone module is an embedded system designed to perform simultaneous recording of breath sounds from vital locations with desired quality and transmit data wirelessly. 
+The module is designed to be compact, energy-efficient, and capable of capturing high-quality audio data. 
+The module is integrated with the Pnoi-phone app, which serves as a control interface for the module and a data storage platform.
+
+#### General Schematics
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-mems-schematic.png"
+alt="pnoi-mems-schematic"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Pnoi-phone ESD schematic with MEMS microphone"}
+</p>
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-condenser-schematic.png"
+alt="pnoi-condenser-schematic"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Pnoi-phone ESD schematic with Condenser microphone"}
+</p>
+
+### Embedded System Design Process
+- Define requirements 
+- Develop architecture and select components 
+- Prototype circuit layout 
+- Write embedded firmware 
+- Build and test prototypes 
+
+- Industry
+  - Optimize manufacturing process 
+  - Validate before launch 
+
+### Component Selection
+Component research and selection process for the Pnoi-phone hardware development project.
+
+**Requirements:**
+- Microphones to capture sound simultaneously from two sources
+- Development board for recording and wireless transmission (Bluetooth/ wifi)
+
+#### Phase 1
+
+![Image](https://github.com/vaguebrownfox01/pnoi-ble_peri/assets/111632128/2ef174d2-fc55-46a3-aa67-1e8498e833e4)
+
+##### Microphone
+- **Condenser microphone** with 3.5mm jack: analog sound signal output
+- **Sound card**: convert the analog signal to digital output
+
+> Readily available components for prototype development 
+
+##### Development Board
+- **Raspberry Pi 3B**: 1.4GHz 64-bit quad-core processor, dual-band wireless LAN, Bluetooth 4.2/BLE
+
+> Powerful processor; easy to set up and program
+
+---
+
+#### Phase 2
+
+![Image](https://github.com/vaguebrownfox01/pnoi-ble_peri/assets/111632128/c427ff7d-fa3c-485a-afb2-bfda0249d373)
+
+##### Microphone
+- **MEMS microphone**: [by Adafruit](https://www.adafruit.com/product/3421)
+
+> Digital output in I2S protocol
+
+##### Development Board
+- **Raspberry Pi Zero W**: quad-core 64-bit ARM Cortex-A53 processor clocked at 1GHz and 512MB of SDRAM; Bluetooth 4.2, Bluetooth Low Energy (BLE), onboard antenna; I2S Audio
+
+> smaller size ( 65mm × 30mm ) and powerful
+---
+
+#### Phase 3
+
+![Image](https://github.com/vaguebrownfox01/pnoi-ble_peri/assets/111632128/67628b33-8e1d-45f9-ac3a-02005dc011ca)
+
+##### Microphone
+- **MEMS microphone**: [by Adafruit](https://www.adafruit.com/product/3421)
+
+> Digital output in I2S protocol
+
+##### Development Board
+- **[Adafruit HUZZAH32](https://www.adafruit.com/product/3405)**: 240 MHz dual core Tensilica LX6 microcontroller with 600 DMIPS; Integrated dual mode Bluetooth (classic and BLE); 2 x I2S Audio; SD-card interface support
+
+> more advanced and compact board, energy efficient and suitable for the required function
+---
+
+### Breadboard prototypes
+Testing basic functionalities on a breadboard
+
+**Functions**:
+- Simultaneously record from _two_ microphones
+- Wirelessly **control** to _Start_ and _Stop_ recording
+- _Trasmitt_ recorded data wirelessly for **storage**
+
+#### Phase 1
+> RPi-3B version
+
+![Image](https://github.com/vaguebrownfox01/pnoi-ble_peri/assets/111632128/206ff812-48ec-4b13-be9e-50b3b8060eb5)
+
+Two electret condenser microphones were employed for sound capture, while sound cards were utilized to convert analog signals into digital format. Simultaneously, the Raspberry Pi records the digital signal through sound drivers (Linux 'arecord'). The Raspberry Pi is programmed to establish a Bluetooth connection with the Pnoi-phone app. This app serves the purpose of initiating and terminating the recording function on the Raspberry Pi. Subsequently, the recorded data is transferred to the app once the recording process is halted.
+
+##### **Problems**:
+- A lot static of noise was observed from the condenser microphone
+- The setup is bulky and not easy for encapsulation
+- It also consumes a lot of power and gets hot
+- Data transfer of raw audio files in bulk is slow
+---
+
+#### Phase 2
+> Rpi-Zero version
+
+![Image](https://github.com/vaguebrownfox01/pnoi-ble_peri/assets/111632128/86a980b9-c46a-483f-8818-afce10aa13b5)
+
+To address prior issues, two MEMS microphones were selected. These microphones feature built-in audio digitization, reducing noise susceptibility. The digital audio data follows the I2S protocol. Raspberry Pi Zero W, a smaller and more power-efficient board, offers comparable performance to the RPi 3B+.
+
+##### **Problems**:
+- RPi zero is still pretty heavy for the task and possesses many unused features
+- Bluetooth audio streaming
+---
+
+#### Phase 3
+> ESP32 version
+
+![Image](https://github.com/vaguebrownfox01/pnoi-ble_peri/assets/111632128/75a294f9-e170-4816-a764-ea2edb87bfe9)
+
+The [MEMS microphone](https://www.adafruit.com/product/3421) delivered excellent recording quality. To address limitations with the RPi Zero, the ESP32 Feather Board was selected as the development board. Its compact size and lower power consumption, combined with the necessary features, made it the optimal choice.
+
+##### **Problems**:
+- Bluetooth Audio Protocol: No support for A2DP (Advanced Audio Distribution Profile) in ESP32
+- But can be solved by using a Bluetooth HSP (Headset Profile) and HFP (Hands-Free Profile) to stream audio
+- HS/HFP is a simpler protocol and can be implemented with the ESP32, but the audio quality is not as good as A2DP
+
+---
+
+### Pnoi-phone PCB Design
+
+To transform the breadboard circuit into a compact module for the Pnoi-phone, a custom PCB was created to efficiently integrate and secure all components.
+
+- Two MEMS mics: M1, M2
+- ESP32 Feather board
+- Power input pins
+
+> pnoi-phone ESP32 PCB schematics
+
+![Image](https://user-images.githubusercontent.com/111632128/277598323-a62b0081-899f-416e-8ee6-6c53b724ea00.png)
+
+
+> pnoi-phone ESP32 PCB design
+
+![Image](https://user-images.githubusercontent.com/111632128/277598635-0ee47221-50b3-4b1c-84f2-ad8b2141e700.png)
+
+![Image](https://user-images.githubusercontent.com/111632128/277599759-43929116-1469-45c0-aa09-86e0a878b8a5.png)
+
+#### Embodiment of the Pnoi-phone module
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-phone_prototype-inuse.png"
+alt="esd-package-alt"
+width="100%"
+height="600"
+/>
+---
+{/* todo:
   - add images of versions 
   - component choices and rationale
   - technical details
   - working module video
-  - waveforms and problems
+  - waveforms and problems */}
+
+#### For further details, refer
+
+-	  [Pnoi-phone](/posts/projects/pnoi-phone/pnoi-phone): Main post for Pnoi-phone project.
+-   [User Research](/posts/projects/pnoi-phone_user-rx): User research conducted for Pnoi-phone to understand the user needs and requirements.
+-   [Pnoi Corpus](/posts/projects/pnoi-phone_corpus): A multimodal breath sounds corpus of patients and controls (recorded with a high-end microphone and digital stethoscope) and corresponding PFT values.
+-   [Pnoi Stor](/posts/projects/pnoi-phone_stor): Data collection protocol, organisation scheme and storage for Pnoi-phone project.
+-   [Product Design](/posts/projects/pnoi-phone_product-design): Design and development of Pnoi-phone biomedical device integrated with AI models to diagnose and monitor airway diseases.
+-   [Pnoi-phone App](/posts/projects/pnoi-phone_app): Design and development of Pnoi-phone android app.
