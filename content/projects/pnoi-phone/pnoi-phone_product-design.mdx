@@ -31,10 +31,172 @@ Refer <a href="/posts/projects/pnoi-phone/pnoi-phone">Pnoi-phone</a> page for ba
 The design process for the pnoi-phone is an iterative process that involves multiple stages of design, prototyping, and testing. 
 The process is divided into 5 stages, each with its own set of problems and solutions.
 
-todo:
+> Coupler Design to efficiently capture breath sounds from a stethoscope tube with a microphone.
 
--   5 versions of incremental design process with problems faces and respective solutions
--   brainstorming sketches and design process
--   3D models of design
--   3D printed prototypes of designs: images
--   3D interface section to view the final design
+##### Cross-sectional coupler
+The idea is to place the microphone at the end of the stethoscope tube to capture the breath sounds. 
+The coupler is designed to fit the stethoscope tube and hold the microphone in place.
+
+**Problem**: The ear-piece of the stethoscope is removed in this design, which is an essential part of the stethoscope for auscultation.
+The user needs audio feedback from the stethoscope to ensure proper placement and contact with the patient's skin. 
+
+From this design, by positioning the microphone at various lengths from the stethoscope head, 
+it was confirmed that the microphone should be placed as close to the stethoscope tube as possible to capture the breath sounds effectively.
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-coupler-mems-v1.png"
+alt="pnoi mems mic cross-sectional coupler"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"MEMS microphone coupler design."}
+</p>
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-coupler-con-v1.png"
+alt="pnoi condenser mic coupler"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Condenser microphone coupler design."}
+</p>
+
+##### Flush mount
+To solve record the sound without losing the ear-piece, the microphone is placed within the coupler that fits around the tube and positions the microphone exactly on upon a hole made on the tube.
+
+**Problem**: The microphone placement in this design may not capture the breath sounds effectively due to the distance from the stethoscope tube. 
+
+Based on several experiments, this design was successful in capturing the breath sounds retaining the head piece. 
+However, the microphone induced noise due to the vibrations from the stethoscope tube and long wires connecting the microphone to the device was not desirable.
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-coupler-con-v2.png"
+alt="pnoi flush mount design"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Flush mount design for condenser mic."}
+</p>
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-coupler-mems-v2.png"
+alt="pnoi flush mount design for mems mic"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Flush mount design for MEMS mic."}
+</p>
+
+##### Branch coupler
+Another coupler design that was considered was a branch coupler that splits the incoming sound into two paths, one for the ear-piece and the other for the microphone. 
+Various types of branch couplers were designed to explore several ways to create two channels from a single sound path.
+
+**Problem**: Considering the size and complexity, it was not feasible to implement this design. The sound quality significantly degraded due to the split in the sound path and loss in energy.
+Our in-house acoustic expert suggested flush-mount design was the optimal way to capture the breath sounds from the tube.
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-branch_coupler.png"
+alt="pnoi-branch_coupler-alt"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"branch coupler design and microphone placement."}
+</p>
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-branch_coupler-vars.png"
+alt="pnoi branch coupler variations-alt"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"branch coupler variations."}
+</p>
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-branch_coupler_closeup.png"
+alt="pnoi branch coupler closeup-alt"
+width="50%"
+height="600"
+/>
+
+##### Embodiment of the coupler design
+Here, the design of the coupler was a flush mount design that holds the microphone in place and also encloses the electronic components within.
+This was possible with small size of ESP32 microcontroller and a MEMS microphone for embedded system design.
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-embodiment.png"
+alt="pnoi-embodiment-alt"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Embodiment of the coupler design. a) Through hole, b) T-section."}
+</p>
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-phone_prototype-inuse.png"
+alt="image-alt"
+width="100%"
+height="600"
+/>
+
+#### For further details, refer
+
+-	[Pnoi-phone](/posts/projects/pnoi-phone/pnoi-phone): Main post for Pnoi-phone project.
+-   [User Research](/posts/projects/pnoi-phone_user-rx): User research conducted for Pnoi-phone to understand the user needs and requirements.
+-   [Pnoi Corpus](/posts/projects/pnoi-phone_corpus): A multimodal breath sounds corpus of patients and controls (recorded with a high-end microphone and digital stethoscope) and corresponding PFT values.
+-   [Pnoi Stor](/posts/projects/pnoi-phone_stor): Data collection protocol, organisation scheme and storage for Pnoi-phone project.
+-   [Embedded System Design](/posts/projects/pnoi-phone_esd): Design and development of embedded system for Pnoi-phone biomedical device.
+-   [Pnoi-phone App](/posts/projects/pnoi-phone_app): Design and development of Pnoi-phone android app.
+
