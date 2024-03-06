@@ -1,84 +1,91 @@
 ---
-title: "pnoi corpus"
+title: 'pnoi corpus'
 description: Pnoi corpus is a dataset of lung function parameters and breath sound of individuals recorded from multiple locations.
 repository:
-url: 
-date: "2024-01-26"
+url:
+date: '2024-01-26'
 published: true
 featured: -1
 tags:
-  - "spire-lab"
-  - "ml-ops"
-  - "python"
+    - 'spire-lab'
+    - 'ml-ops'
+    - 'python'
 ---
 
 #### Overview
-The Pnoi Corpus is a collection of **breath sounds** recorded <u>simultaneously from the mouth and chest</u> of both healthy subjects and individuals diagnosed with asthma. 
-The dataset also includes biodata, subject's response to a standard performa and **pulmonary function test (PFT)** reports. 
-The recordings were captured using a Littmann CORE digital stethoscope and a Zoom H6 microphone. 
-Sounds of Five breath were recored from **four locations** on the posterior chest. 
+
+The Pnoi Corpus is a collection of **breath sounds** recorded <u>simultaneously from the mouth and chest</u> of both healthy subjects and individuals diagnosed with asthma.
+The dataset also includes biodata, subject's response to a standard performa and **pulmonary function test (PFT)** reports.
+The recordings were captured using a Littmann CORE digital stethoscope and a Zoom H6 microphone.
+Sounds of Five breath were recored from **four locations** on the posterior chest.
 The data was collected at St. John Hospital, Pulmonary Health Science department.
 
-For asthmatic subjects, a post recording was made ofter administering a bronchodilator. 
-The post recording was made 15 minutes after the administration of the bronchodilator. 
+For asthmatic subjects, a post recording was made ofter administering a bronchodilator.
+The post recording was made 15 minutes after the administration of the bronchodilator.
 The post recording was made to assess the **effect of the bronchodilator** on the subject's breathing sounds.
 
-The dataset consists of 150 asthma patients and 150 control subjects, totaling 300 recordings. 
+The dataset consists of 150 asthma patients and 150 control subjects, totaling 300 recordings.
 Each recording is accompanied by corresponding **metadata**, including demographic information, medical history, and the results of the PFT report.
 
 <img
-  style={{
-    margin: 'auto',
-    padding: '8px',
-    'border-radius': '16px',
-  }}
-  src="/images/projects/pnoi/pnoi-data_acquisition.png"
-  alt="pnoi data acquisition"
-  width="100%"
-  height="600"
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoi-data_acquisition.png"
+	alt="pnoi data acquisition"
+	width="100%"
+	height="600"
 />
 <p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
-{"pnoi data accquisition"}
+	{'pnoi data accquisition'}
 </p>
 
 #### Data Statistics
 
-- Total number of recordings: 300
-  - Asthma patients: 150
-  - Control subjects: 150
+-   Total number of recordings: 300
 
-- Distribution of patients by gender:
-  - Male: 60%
-  - Female: 39%
-  - Other: 1%
+    -   Asthma patients: 150
+    -   Control subjects: 150
 
-- Age distribution:
-  - Minimum age: 18
-  - Maximum age: 75
-  - Average age: 34
-  - Median age: 40
+-   Distribution of patients by gender:
 
-- Additional statistics:
-  - Average duration of breath sound recordings: 15 to 20 seconds
-  - Minimum duration: 6 seconds
-  - Maximum duration: 45 seconds
+    -   Male: 60%
+    -   Female: 39%
+    -   Other: 1%
+
+-   Age distribution:
+
+    -   Minimum age: 18
+    -   Maximum age: 75
+    -   Average age: 34
+    -   Median age: 40
+
+-   Additional statistics:
+    -   Average duration of breath sound recordings: 15 to 20 seconds
+    -   Minimum duration: 6 seconds
+    -   Maximum duration: 45 seconds
 
 #### Data Organization
+
 The dataset is organized into the following directories and files:
 
-- `PNOI_CORPUS/`
+-   `PNOI_CORPUS/`
 
-- `README.md`: A brief description of the dataset and its contents.
-- `DATA_PNOISTOR/`: Raw data dump from the PnoiStor web-app
-- `DATA/`
-  - `[subject-ID]/`: A folder for each subject consist of all relevant data
-    - `[subject-ID]_[location].wav`: Two channels audio recording of the subject's breathing sounds
+-   `README.md`: A brief description of the dataset and its contents.
+-   `DATA_PNOISTOR/`: Raw data dump from the PnoiStor web-app
+-   `DATA/`
 
-    - `[subject-ID]_[location].txt`: Text file containing annotations for the audio recording.
+    -   `[subject-ID]/`: A folder for each subject consist of all relevant data
 
-    - `[subject-ID].json`: JSON file containing metadata for the subject
+        -   `[subject-ID]_[location].wav`: Two channels audio recording of the subject's breathing sounds
 
-    - `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject
+        -   `[subject-ID]_[location].txt`: Text file containing annotations for the audio recording.
+
+        -   `[subject-ID].json`: JSON file containing metadata for the subject
+
+        -   `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject
 
 ### Data format
 
@@ -86,23 +93,19 @@ The dataset is organized into the following directories and files:
 
 ##### Nomenclature: seperated by \"-\"
 
-- [`data_version`]: Month and Year of data collection
-- [`subject-ID`]: Unique ID for each subject
-- [`location`]: Location of the recording on the posterior chest
-- `BA`: "Breath Audio file tag",
-- `before/after`: "before" or "after" administration of bronchodilator
-- `location`:
-        1. `LU`: "Left Upper Lobe",
-        2. `RU`: "Right Upper Lobe",
-        3. `LL`: "Left Lower Lobe",
-        4. `RL`: "Right Lower Lobe",
-- [`file-ID`]: Unique ID for each recording file
-- [`comment`]: Additional information about the recording
+-   [`data_version`]: Month and Year of data collection
+-   [`subject-ID`]: Unique ID for each subject
+-   [`location`]: Location of the recording on the posterior chest
+-   `BA`: "Breath Audio file tag",
+-   `before/after`: "before" or "after" administration of bronchodilator
+-   `location`: 1. `LU`: "Left Upper Lobe", 2. `RU`: "Right Upper Lobe", 3. `LL`: "Left Lower Lobe", 4. `RL`: "Right Lower Lobe",
+-   [`file-ID`]: Unique ID for each recording file
+-   [`comment`]: Additional information about the recording
 
 The audio file contains TWO channels for breath sounds recorded simultaneously from the mouth and chest of the subject.
 
-- Channel 0: Mouth
-- Channel 1: Chest
+-   Channel 0: Mouth
+-   Channel 1: Chest
 
 `EXAMPLE`: pnoistor_oct07-amartyaveer_81b8f33c-BA_before_LL-c03e-lateupl.wav
 
@@ -110,13 +113,13 @@ The audio file contains TWO channels for breath sounds recorded simultaneously f
 
 ##### Nomenclature: Same as Audio file, but with `.txt` extension
 
-- **values are tab separated.**
+-   **values are tab separated.**
 
 The annotation file contains the following information:
 
-- `begin`: Start time of the annotation in seconds
-- `end`: End time of the annotation in seconds
-- `label`: Label of the annotation
+-   `begin`: Start time of the annotation in seconds
+-   `end`: End time of the annotation in seconds
+-   `label`: Label of the annotation
 
 `EXAMPLE`: pnoistor_oct07-amartyaveer_81b8f33c-BA_before_LL-c03e-lateupl.txt
 
@@ -125,33 +128,45 @@ The annotation file contains the following information:
 The subjects are also requested to recite sustained phonation of the vowels /a/, /i/, /u/, and /o/ for 2-5 seconds. The annotation labels are as follows:
 
 <img
-style={{
-margin: 'auto',
-padding: '8px',
-'border-radius': '16px',
-}}
-src="/images/projects/pnoi/pnoi-ba_anot-labels.png"
-alt="pnoi-ba_anot-labels.png"
-width="100%"
-height="600"
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoi-ba_anot-labels.png"
+	alt="pnoi-ba_anot-labels.png"
+	width="100%"
+	height="600"
 />
 
 `bb[n]`: marks a single breathing session consisting of Five breaths recorded at a single location. n encodes the location of the recording.
 
+<img
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoi-rec-locs.png"
+	alt="pnoi-rec-locations-alt"
+	width="50%"
+	height="600"
+/>
+
 ##### File ID and Comments
 
-- Are optional infornation to uniquely identify the file and add any comments about the recording.
+-   Are optional infornation to uniquely identify the file and add any comments about the recording.
 
 <img
-style={{
-margin: 'auto',
-padding: '8px',
-'border-radius': '16px',
-}}
-src="/images/projects/pnoi/pnoi-na_annotation-audacity.png"
-alt="pnoi-na_annotation-audacity"
-width="100%"
-height="600"
+	style={{
+		margin: 'auto',
+		padding: '8px',
+		'border-radius': '16px',
+	}}
+	src="/images/projects/pnoi/pnoi-na_annotation-audacity.png"
+	alt="pnoi-na_annotation-audacity"
+	width="100%"
+	height="600"
 />
 
 Fig. Spectrogram showing two channels breath audio annotated with respective labels.
@@ -227,6 +242,7 @@ JSON file contains metadata for the subject. The metadata includes:
 }
 
 ```
+
 #### PFT Report
 
 ##### Nomenclature: Same as Audio file, but with `.tsv` extension and with file tag `PFT`
@@ -237,11 +253,11 @@ TSV file contains PFT report for the subject. The PFT report includes:
 | **ref** | 1.58 | 1.91 | 77 |
 | **val** | 1.48 | 1.63 | 91 |
 
-- **ref**: Reference value (predicted value) for the subject
-- **val**: Measured value for the subject
-- **FEV1**: Forced Expiratory Volume in 1 second
-- **FVC**: Forced Vital Capacity
-- **ratio**: FEV1/FVC
+-   **ref**: Reference value (predicted value) for the subject
+-   **val**: Measured value for the subject
+-   **FEV1**: Forced Expiratory Volume in 1 second
+-   **FVC**: Forced Vital Capacity
+-   **ratio**: FEV1/FVC
 
 #### For further details, refer
 
@@ -253,12 +269,8 @@ TSV file contains PFT report for the subject. The PFT report includes:
 
 ##### Disclaimer
 
-The Pnoi Corpus is intended for research and educational purposes only. 
-It is important to note that the dataset does not constitute medical advice or diagnosis. 
+The Pnoi Corpus is intended for research and educational purposes only.
+It is important to note that the dataset does not constitute medical advice or diagnosis.
 Users of this dataset are responsible for ensuring compliance with applicable ethical guidelines and regulations when using the data.
 
-{/* todo:
-  - data schema, muster table
-  - data stats and plots
-  - mlops for training and inference
-  - experiment design and results */}
+
