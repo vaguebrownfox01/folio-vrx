@@ -12,8 +12,80 @@ tags:
   - "android"
 ---
 
+#### Overview
+The smartphone app acts as an interface between the user and the Pnoi-phone hardware. 
+The user, through the smartphone, can start/stop/pause the recording and collect and store the metadata of the patients.
 
+#### System design
+Pnoi-phone app is used to control various device functions such as **recording and storing the data**. 
+The app is designed to be user-friendly and intuitive. It also provides a platform for the user to view the data and **metadata** collected by the device. 
+It also integrates a trained **Pnoi AI model** to predict Pulmomnary Function Test **(PFT) values** and display them to the user.
+
+<img
+  style={{
+  margin: 'auto',
+  padding: '8px',
+  'border-radius': '16px',
+  }}
+  src="/images/projects/pnoi/pnoi-block-diagram.png"
+  alt="pnoi-app block diagram"
+  width="100%"
+  height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Pnoi-phone block diagram"}
+</p>
+
+#### App activity
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-app-activity.png"
+alt="pnoi-app-activity-alt"
+width="100%"
+height="600"
+/>
+
+#### App flow
+User flow between three main app activities: 
+- **Profile**: Create and manage patient profiles,
+- **Patient List**: View and manage patient data,
+- **Recording**: Start/stop/pause recording and view the data.
+
+<img
+style={{
+margin: 'auto',
+padding: '8px',
+'border-radius': '16px',
+}}
+src="/images/projects/pnoi/pnoi-app-flow.png"
+alt="pnoi-app-flow-alt"
+width="100%"
+height="600"
+/>
+<p style={{ 'text-align': 'center', margin: 'auto' }} width="320">
+{"Pnoi-phone app flow"}
+</p>
+
+The Pnoi-lno app is a step forward in the field of respiratory health monitoring, 
+combining cutting-edge technology with a user-centric approach. 
+Its intuitive design, robust features, and seamless integration with the Pnoi-phone device make it a valuable asset for anyone seeking to monitor and manage respiratory health effectively.
+
+#### For further details, refer
+
+-   [User Research](/posts/projects/pnoi-phone_user-rx): User research conducted for Pnoi-phone to understand the user needs and requirements.
+-   [Pnoi Corpus](/posts/projects/pnoi-phone_corpus): A multimodal breath sounds corpus of patients and controls (recorded with a high-end microphone and digital stethoscope) and corresponding PFT values.
+-   [Pnoi Stor](/posts/projects/pnoi-phone_stor): Data collection protocol, organisation scheme and storage for Pnoi-phone project.
+-   [Product Design](/posts/projects/pnoi-phone_product-design): Design and development of Pnoi-phone biomedical device integrated with AI models to diagnose and monitor airway diseases.
+-   [Embedded System Design](/posts/projects/pnoi-phone_esd): Design and development of embedded system for Pnoi-phone biomedical device.
+
+
+{/* 
 todo
  - android app interfaces
  - app features and rationale
- - app end to end flow
+ - app end to end flow */}
