@@ -30,8 +30,23 @@ export default function Example() {
 	return (
 		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
-			<div className="container mx-auto flex min-h-screen items-center justify-center px-4">
-				<div className="mx-auto mt-32 grid w-full grid-cols-1 gap-8 sm:mt-0 sm:grid-cols-3 lg:gap-16">
+
+			<div className="container mx-auto flex min-h-screen flex-wrap items-center justify-center px-4">
+				<div className="container mx-auto mt-16 flex items-center justify-center px-4">
+					<h2 className="mr-8 border-white border p-4 font-display text-6xl font-bold text-zinc-200">
+						v.v
+					</h2>
+					<p className="mt-4 text-lg text-zinc-400 text-justify">
+						Hi, I'm Jeevan. An engineer, designer, artist.
+						passionate about creating solutions that solves
+						real-world problems. I'm always looking for
+						new opportunities to learn and grow. I love to
+						connect with new people, so feel free to reach
+						out to me using any of the following social
+						media platforms.
+					</p>
+				</div>
+				<div className="mx-auto mt-16 grid w-full grid-cols-1 gap-8 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s) => (
 						<Card key={s.href}>
 							<Link
