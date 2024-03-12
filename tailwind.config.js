@@ -15,7 +15,7 @@ module.exports = {
 						'code::after': {
 							content: '""',
 						},
-						maxWidth: '90ch',
+						maxWidth: '75ch',
 					},
 				},
 				quoteless: {
