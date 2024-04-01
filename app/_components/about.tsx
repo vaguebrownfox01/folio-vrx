@@ -14,10 +14,10 @@ import {
 } from 'contentlayer/generated';
 
 export const moniker = 'jeevan kylash';
-export const email = 'jeevank@iisc.ac.in';
+export const email = 'vrx.meta7@gmail.com';
 export const x_handle = 'vaguebrownfox_x';
 export const git_handle = 'vaguebrownfox01';
-export const tagline = 'Research Associate	•	SPIRE Lab	•	IISc Bangalore';
+export const tagline = 'Firmware Developer	•	Schneider Electric	•	Bangalore';
 
 export const navs = [
 	{
@@ -89,7 +89,7 @@ export const n_months = (dateString: string = '1998-01-31') => {
 };
 
 export const months = n_months();
-export const ratio = `${n_months()} of ${n_months() - n_months('2033-01-31')}`;
+export const ratio = `${n_months()} of ${n_months() - n_months('2040-01-31')}`;
 export const mori = `a glimmering speck of dust for every month of my life thus far`;
 
 const art_tags = {
