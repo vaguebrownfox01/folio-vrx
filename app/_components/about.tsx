@@ -13,11 +13,11 @@ import {
 	allProjects,
 } from 'contentlayer/generated';
 
-export const moniker = 'jeevan kylash';
+export const moniker = 'env.vua';
 export const email = 'vrx.meta7@gmail.com';
 export const x_handle = 'vaguebrownfox_x';
 export const git_handle = 'vaguebrownfox01';
-export const tagline = 'Firmware Developer	•	Schneider Electric	•	Bangalore';
+export const tagline = 'a vaguebrownfox project';
 
 export const navs = [
 	{
