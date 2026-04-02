@@ -100,15 +100,25 @@ export default function Particles({
 	}
 
 	const getFireColor = (v: number): Fire => {
+		// Check for a 7% probability to override the color with a spark
+		if (Math.random() < 0.07) {
+			// Generate a random green value between 0 and 255
+			// 0 = Pure Red
+			// ~128 = Orange
+			// 255 = Bright Yellow
+			const randomGreen = Math.floor(Math.random() * 256)
+
+			return { 
+				red: 255, 
+				green: randomGreen, 
+				blue: 0 
+			}
+		}
+
+		// Original logic: the remaining 93% of the time, calculate the blue/cyan shade
 		const shade: number = Math.floor(v * 256)
-
-		// Calculate the red value (R)
 		let red = 0
-
-		// Calculate the green value (G)
 		let green = Math.min(255, Math.max(0, (shade - 65) * 3))
-
-		// Calculate the blue value (B)
 		let blue = Math.min(255, shade * 3)
 
 		return { red, green, blue }

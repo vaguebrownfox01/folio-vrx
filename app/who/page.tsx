@@ -37,7 +37,7 @@ export default function Example() {
 						v.v
 					</h2>
 					<p className="mt-4 text-lg text-zinc-400 text-justify">
-						Hi, I'm Jeevan. An engineer, designer, artist.
+						Hi, I'm Jeevan Kylash. An engineer, designer, artist.
 						passionate about creating solutions that solves
 						real-world problems. I'm always looking for
 						new opportunities to learn and grow. I love to

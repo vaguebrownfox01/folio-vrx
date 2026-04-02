@@ -13,7 +13,7 @@ import {
 	allProjects,
 } from 'contentlayer/generated';
 
-export const moniker = 'env.vua';
+export const moniker = 'el.sono';
 export const email = 'vrx.meta7@gmail.com';
 export const x_handle = 'vaguebrownfox_x';
 export const git_handle = 'vaguebrownfox01';
