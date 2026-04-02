@@ -101,12 +101,12 @@ export default function Particles({
 
 	const getFireColor = (v: number): Fire => {
 		// Check for a 7% probability to override the color with a spark
-		if (Math.random() < 0.07) {
+		if (Math.random() < 0.27) {
 			// Generate a random green value between 0 and 255
 			// 0 = Pure Red
 			// ~128 = Orange
 			// 255 = Bright Yellow
-			const randomGreen = Math.floor(Math.random() * 256)
+			const randomGreen = Math.floor((Math.random()/1.2) * 256)
 
 			return { 
 				red: 255, 
