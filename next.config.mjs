@@ -1,4 +1,4 @@
-import { withContentlayer } from 'next-contentlayer'
+import { withContentlayer } from 'next-contentlayer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,6 +6,8 @@ const nextConfig = {
 	experimental: {
 		mdxRs: true,
 	},
-}
+	allowedDevOrigins: ['192.168.1.44'],
+	turbopack: {},
+};
 
-export default withContentlayer(nextConfig)
+export default withContentlayer(nextConfig);

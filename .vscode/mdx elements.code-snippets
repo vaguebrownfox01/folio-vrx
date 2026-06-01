@@ -24,7 +24,7 @@
 					"style={{",
 						"margin: 'auto',",
 						"padding: '8px',",
-						"'border-radius': '16px',",
+						"'borderRadius': '16px',",
 					"}}",
 					"src=\"/images/projects/${1:project}/${2:image-file}\"",
 					"alt=\"${3:image-alt}\"",

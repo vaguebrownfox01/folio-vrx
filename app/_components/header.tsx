@@ -1,5 +1,5 @@
 'use client';
-import { ArrowLeft, Eye, Github, Twitter } from 'lucide-react';
+import { ArrowLeft, Code, Eye, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { x_handle, git_handle, page } from '@/app/_components/about';
@@ -78,7 +78,7 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 							target="_blank"
 							href={`https://twitter.com/${x_handle}`}
 						>
-							<Twitter
+							<X
 								className={`h-6 w-6 duration-200 hover:font-medium ${
 									isIntersecting
 										? ' text-zinc-400 hover:text-zinc-100'
@@ -90,7 +90,7 @@ export const Header: React.FC<Props> = ({ page, post, views }) => {
 							target="_blank"
 							href={`https://github.com/${git_handle}`}
 						>
-							<Github
+							<Code
 								className={`h-6 w-6 duration-200 hover:font-medium ${
 									isIntersecting
 										? ' text-zinc-400 hover:text-zinc-100'

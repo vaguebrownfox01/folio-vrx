@@ -26,8 +26,10 @@ export default async function incr(req: NextRequest): Promise<NextResponse> {
 		return new NextResponse('Page not found', { status: 400 })
 	}
 
-	const ip = req.ip
-	if (ip) {
+	const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+		req.headers.get('cf-connecting-ip') ||
+		'unknown'
+	if (ip && ip !== 'unknown') {
 		// Hash the IP in order to not store it directly in your db.
 		const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ip))
 		const hash = Array.from(new Uint8Array(buf))

@@ -1,4 +1,7 @@
-import { allArts as allPosts, art_page as page } from '@/app/_components/about';
+import {
+	allArts as allPosts,
+	art_page as page,
+} from '@/app/_components/about';
 import Header from '@/app/_components/header';
 import { Mdx } from '@/app/_components/mdx';
 import { ReportView } from '@/app/_components/view';
@@ -8,14 +11,16 @@ import './mdx.css';
 
 export const revalidate = 60;
 type Props = {
-	params: {
+	params: Promise<{
 		slug: string;
-	};
+	}>;
 };
 
 const redis = Redis.fromEnv();
 
-export async function generateStaticParams(): Promise<Props['params'][]> {
+export async function generateStaticParams(): Promise<
+	{ slug: string }[]
+> {
 	return allPosts
 		.filter((p) => p.published)
 		.map((p) => ({
@@ -24,14 +29,17 @@ export async function generateStaticParams(): Promise<Props['params'][]> {
 }
 
 export default async function PostPage({ params }: Props) {
-	const slug = params?.slug;
+	const { slug } = await params;
 	const post = allPosts.find((post) => post.slug === slug);
 
 	if (!post) {
 		notFound();
 	}
 
-	const views = (await redis.get<number>(['viewcount', page.name, slug].join(':'))) ?? 0;
+	const views =
+		(await redis.get<number>(
+			['viewcount', page.name, slug].join(':'),
+		)) ?? 0;
 
 	return (
 		<div className="min-h-screen bg-zinc-50">

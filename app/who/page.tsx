@@ -1,5 +1,5 @@
 'use client';
-import { Github, Mail, Twitter } from 'lucide-react';
+import { Code, Mail, X } from 'lucide-react';
 import Link from 'next/link';
 import { Navigation } from '../_components/nav';
 import { Card } from '@/app/_components/card';
@@ -7,7 +7,7 @@ import { email, git_handle, x_handle } from '@/app/_components/about';
 
 const socials = [
 	{
-		icon: <Twitter size={20} />,
+		icon: <X size={20} />,
 		href: `https://twitter.com/${x_handle}`,
 		label: 'X',
 		handle: `@${x_handle}`,
@@ -19,7 +19,7 @@ const socials = [
 		handle: `${email}`,
 	},
 	{
-		icon: <Github size={20} />,
+		icon: <Code size={20} />,
 		href: `https://github.com/${git_handle}`,
 		label: 'github',
 		handle: git_handle,

@@ -141,7 +141,14 @@ const project_tags = {
 };
 
 const note_tags = {
-	flow: 'xxx-white',
+	flow: 'xxx-cyan-300',
+	mind: 'xxx-purple-400',
+	sermon: 'xxx-pink-300',
+	TMS: 'xxx-amber-300',
+	tms: 'xxx-amber-300',
+	ytube: 'xxx-red-500',
+	art: 'xxx-yellow-400',
+	design: 'xxx-blue-400',
 };
 
 const tag_colors = {

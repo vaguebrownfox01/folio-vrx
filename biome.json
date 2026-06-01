@@ -1,0 +1,35 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true
+        },
+        "ignore": [
+            "node_modules",
+            ".next",
+            "dist",
+            ".contentlayer"
+        ]
+    },
+    "formatter": {
+        "indentStyle": "tab",
+        "indentWidth": 1,
+        "ignore": [
+            "node_modules",
+            ".next",
+            "dist",
+            ".contentlayer"
+        ]
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "double"
+        }
+    },
+    "json": {
+        "formatter": {
+            "trailingCommas": "none"
+        }
+    }
+}
