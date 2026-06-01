@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "contentlayer build && next build",
 		"start": "next start",
 		"fmt": "biome check . --apply-unsafe && biome format . --write",
 		"lint": "biome lint . --apply-unsafe",
